@@ -12,7 +12,6 @@ module.exports = {
         path: __dirname + '/public',
         publicPath: ''
     },
-    devtool: 'inline-source-map',
     devServer: {
         host,
         port: devServerPort,
@@ -52,7 +51,7 @@ module.exports = {
                     {
                         loader: 'style-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: false
                         }
                     },
                     {
