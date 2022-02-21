@@ -1,0 +1,30 @@
+.section {
+    border-top: 1px solid black;
+    padding: 20px;
+}
+
+.sectionTitle {
+    margin-bottom: 15px;
+}
+
+.basicConcepts {
+    margin-bottom: 15px;
+}
+
+.basicConceptsTitle {
+    margin-bottom: 5px;
+}
+
+.longDescriptionLabel {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.linksTitle {
+    margin-bottom: 5px;
+}
+
+.linkText {
+    display: inline-block;
+    margin-right: 10px;
+}

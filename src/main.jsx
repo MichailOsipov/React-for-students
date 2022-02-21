@@ -1,8 +1,10 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import { MainCourse } from './main-course';
+
+import { Course } from './Course';
+import './main.css';
 
 ReactDOM.render(
-    <MainCourse />,
+    <Course />,
     document.getElementById('root')
 );
