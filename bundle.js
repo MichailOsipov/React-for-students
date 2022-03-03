@@ -2285,16 +2285,16 @@ Object.defineProperty(exports, "__esModule", {
 
 var _LayoutComponents = __webpack_require__(356);
 
+Object.defineProperty(exports, 'CodeExample', {
+    enumerable: true,
+    get: function get() {
+        return _LayoutComponents.CodeExample;
+    }
+});
 Object.defineProperty(exports, 'Section', {
     enumerable: true,
     get: function get() {
         return _LayoutComponents.Section;
-    }
-});
-Object.defineProperty(exports, 'Description', {
-    enumerable: true,
-    get: function get() {
-        return _LayoutComponents.Description;
     }
 });
 Object.defineProperty(exports, 'LongDescription', {
@@ -39167,7 +39167,7 @@ var Course = exports.Course = function Course() {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Links = exports.BasicConcepts = exports.LongDescription = exports.Description = exports.Section = undefined;
+exports.CodeExample = exports.Links = exports.BasicConcepts = exports.LongDescription = exports.Section = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -39212,20 +39212,11 @@ Section.propTypes = {
     title: _propTypes2.default.string
 };
 
-var Description = exports.Description = function Description(_ref2) {
-    var children = _ref2.children;
-    return React.createElement(
-        'span',
-        null,
-        children
-    );
-};
-
 var LongDescription = exports.LongDescription = function (_React$Component) {
     _inherits(LongDescription, _React$Component);
 
     function LongDescription() {
-        var _ref3;
+        var _ref2;
 
         var _temp, _this, _ret;
 
@@ -39235,7 +39226,7 @@ var LongDescription = exports.LongDescription = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref3 = LongDescription.__proto__ || Object.getPrototypeOf(LongDescription)).call.apply(_ref3, [this].concat(args))), _this), _this.state = { open: false }, _this.onToggleOpen = function () {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = LongDescription.__proto__ || Object.getPrototypeOf(LongDescription)).call.apply(_ref2, [this].concat(args))), _this), _this.state = { open: false }, _this.onToggleOpen = function () {
             _this.setState({ open: !_this.state.open });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -39243,18 +39234,26 @@ var LongDescription = exports.LongDescription = function (_React$Component) {
     _createClass(LongDescription, [{
         key: 'render',
         value: function render() {
+            var title = this.props.title;
+            var description = this.props.description;
+
             return React.createElement(
                 'div',
                 null,
                 React.createElement(
-                    'span',
-                    { className: _LayoutComponents2.default.longDescriptionLabel },
-                    '\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0435 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:'
+                    'h3',
+                    null,
+                    title
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    description
                 ),
                 React.createElement(
                     'button',
                     { type: 'button', onClick: this.onToggleOpen },
-                    this.state.open ? 'Спрятать' : 'Показать'
+                    this.state.open ? 'Скрыть' : 'Подробнее'
                 ),
                 this.state.open && React.createElement(
                     'div',
@@ -39268,8 +39267,13 @@ var LongDescription = exports.LongDescription = function (_React$Component) {
     return LongDescription;
 }(React.Component);
 
-var BasicConcepts = exports.BasicConcepts = function BasicConcepts(_ref4) {
-    var items = _ref4.items;
+LongDescription.propTypes = {
+    title: _propTypes2.default.string,
+    description: _propTypes2.default.string
+};
+
+var BasicConcepts = exports.BasicConcepts = function BasicConcepts(_ref3) {
+    var items = _ref3.items;
     return React.createElement(
         'div',
         { className: _LayoutComponents2.default.basicConcepts },
@@ -39296,8 +39300,8 @@ BasicConcepts.propTypes = {
     items: _propTypes2.default.arrayOf(_propTypes2.default.string)
 };
 
-var Links = exports.Links = function Links(_ref5) {
-    var links = _ref5.links;
+var Links = exports.Links = function Links(_ref4) {
+    var links = _ref4.links;
     return React.createElement(
         'div',
         null,
@@ -39340,6 +39344,36 @@ Links.propTypes = {
         url: _propTypes2.default.string,
         text: _propTypes2.default.string
     }))
+};
+
+var CodeExample = exports.CodeExample = function CodeExample(_ref5) {
+    var title = _ref5.title,
+        description = _ref5.description,
+        children = _ref5.children;
+    return React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h4',
+            null,
+            title
+        ),
+        React.createElement(
+            'p',
+            null,
+            description
+        ),
+        React.createElement(
+            'pre',
+            { className: _LayoutComponents2.default.codeBox },
+            children
+        )
+    );
+};
+
+CodeExample.propTypes = {
+    title: _propTypes2.default.string,
+    description: _propTypes2.default.string
 };
 
 /***/ }),
@@ -40309,7 +40343,7 @@ exports = module.exports = __webpack_require__(99)(false);
 
 
 // module
-exports.push([module.i, ".section-3yB {\n  border-top: 1px solid black;\n  padding: 20px;\n}\n\n.sectionTitle-qtW {\n  margin-bottom: 15px;\n}\n\n.basicConcepts-bT1 {\n  margin-bottom: 15px;\n}\n\n.basicConceptsTitle-1TJ {\n  margin-bottom: 5px;\n}\n\n.longDescriptionLabel-3__ {\n  display: inline-block;\n  margin-right: 10px;\n}\n\n.linksTitle-2pL {\n  margin-bottom: 5px;\n}\n\n.linkText-3-h {\n  display: inline-block;\n  margin-right: 10px;\n}", ""]);
+exports.push([module.i, ".section-3yB {\n  border-top: 1px solid black;\n  padding: 20px;\n}\n\n.sectionTitle-qtW {\n  margin-bottom: 15px;\n}\n\n.basicConcepts-bT1 {\n  margin-bottom: 15px;\n}\n\n.basicConceptsTitle-1TJ {\n  margin-bottom: 5px;\n}\n\n.linksTitle-2pL {\n  margin-bottom: 5px;\n}\n\n.linkText-3-h {\n  display: inline-block;\n  margin-right: 10px;\n}\n\n.codeBox-2DZ {\n  border: 2px solid #4358a8;\n  border-radius: 4px;\n  box-sizing: border-box;\n  display: inline-block;\n  padding: 20px;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -40317,9 +40351,9 @@ exports.locals = {
 	"sectionTitle": "sectionTitle-qtW",
 	"basicConcepts": "basicConcepts-bT1",
 	"basicConceptsTitle": "basicConceptsTitle-1TJ",
-	"longDescriptionLabel": "longDescriptionLabel-3__",
 	"linksTitle": "linksTitle-2pL",
-	"linkText": "linkText-3-h"
+	"linkText": "linkText-3-h",
+	"codeBox": "codeBox-2DZ"
 };
 
 /***/ }),
@@ -40482,6 +40516,41 @@ var Lesson1 = exports.Lesson1 = function Lesson1() {
         React.createElement(_LayoutComponents.BasicConcepts, {
             items: ['Как выглядит структура каждого веб приложения (html, css, js)', 'Введение в Javascript. Основные типы данных JS', 'Функции, выражения в JS', 'Асинхронные события', 'Изменение структуры сайта с помощью JS, как нарисовать что-то новое на сайте, изменить уже сделанное', 'Обработка действий пользователя']
         }),
+        React.createElement(
+            _LayoutComponents.LongDescription,
+            {
+                title: '\u0421\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430 \u043F\u0440\u043E\u0435\u043A\u0442\u0430 \u0432 \u043A\u043B\u0438\u0435\u043D\u0442\u0441\u043A\u043E\u043C web',
+                description: React.createElement(
+                    'span',
+                    null,
+                    '\u041A\u0430\u0436\u0434\u044B\u0439 \u043F\u0440\u043E\u0435\u043A\u0442 \u0441\u043E\u0441\u0442\u043E\u0438\u0442 \u0438\u0437 \u0442\u0440\u0435\u0445 \u0447\u0430\u0441\u0442\u0435\u0439: \u0444\u0430\u0439\u043B index.html (\u0432\u0435\u0440\u0441\u0442\u043A\u0430-\u0441\u043A\u0435\u043B\u0435\u0442 \u0441\u0430\u0439\u0442\u0430), styles.css (\u0441\u0442\u0438\u043B\u0438 \u0441\u0430\u0439\u0442\u0430, \u0434\u0435\u043B\u0430\u044E \u0441\u0442\u0440\u0430\u043D\u0438\u0447\u043A\u0443 \u043A\u0440\u0430\u0441\u0438\u0432\u043E\u0439) \u0438 main.js (\u0441\u043A\u0440\u0438\u043F\u0442, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043E\u0436\u0438\u0432\u043B\u044F\u0435\u0442 \u0441\u0442\u0430\u043D\u0438\u0447\u043A\u0443)'
+                )
+            },
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0432\u0435\u0440\u0441\u0442\u043A\u0438 index.html' },
+                '\n        <!DOCTYPE html>\n        <html lang="en">\n            <head>\n                <meta charset="UTF-8">\n                <title>Hello world</title>\n                <link rel="stylesheet" href="styles.css">\n            </head>\n            <body>\n                <div id="root"></div>\n                <!-->\u0417\u0434\u0435\u0441\u044C \u043D\u0438\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u043A\u0440\u0438\u043F\u0442</-->\n                <script type="text/javascript" src="main.js"></script>\n            </body>\n        </html>\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0441\u0442\u0438\u043B\u0435\u0439 styles.css' },
+                '\n        h1 {\n            color: red;\n            font-size: 35px;\n        }\n        \n        .box {\n            width: 100px;\n            height: 50px;\n            background: red;\n        }\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0441\u043A\u0440\u0438\u043F\u0442\u043E\u0432 main.js' },
+                '\n        const button = document.getElementById(\'button\');\n\n        button.AddEventListenter(\'click\', () => {\n            alert(\'Hello from JS\');\n        });\n                '
+            )
+        ),
+        React.createElement(
+            _LayoutComponents.LongDescription,
+            { title: '\u041F\u0438\u0448\u0435\u043C \u043F\u0435\u0440\u0432\u044B\u0435 \u0441\u043A\u0440\u0438\u043F\u0442\u044B \u043D\u0430 JS (\u0432 html \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C <div id=\'button\'></div>)' },
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0441\u043A\u0440\u0438\u043F\u0442\u043E\u0432 main.js' },
+                '\n        const button = document.getElementById(\'button\');\n\n        button.AddEventListenter(\'click\', () => {\n            alert(\'Hello from JS\');\n        });\n                '
+            )
+        ),
         React.createElement(_LayoutComponents.Links, {
             links: [{
                 url: 'https://htmlacademy.ru/',
@@ -40539,6 +40608,120 @@ var Lesson2 = exports.Lesson2 = function Lesson2() {
         React.createElement(_LayoutComponents.BasicConcepts, {
             items: ['Что такое классы в Javascript', 'Что такое библиотека React, зачем она нужна', 'Как сверстать страницу в React', 'Стили в React (style и className)', 'Как создать свой компонент (переопределить свой тег) и сделать так, чтобы один компонент рисовал другой', 'Передача свойств из одного компонента в другой']
         }),
+        React.createElement(
+            _LayoutComponents.LongDescription,
+            {
+                title: '\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0430 React, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043C\u044B \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u043B\u0438 (\u0412\u0435\u0440\u0441\u0442\u043A\u0430)'
+            },
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0421\u0430\u043C\u044B\u0439 \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u043F\u0440\u0438\u043C\u0435\u0440, \u0431\u0430\u0437\u043E\u0432\u0430\u044F \u0432\u0435\u0440\u0441\u0442\u043A\u0430' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        ReactDOM.render(\n            <div>Hello world</div>,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0420\u0438\u0441\u0443\u0435\u043C \u0447\u0442\u043E-\u0442\u043E \u0432 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u043E\u043C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u0435' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class HelloWorld extends React.Component {\n            render() {\n                return (\n                    <div>Hello world!</div>\n                );\n            }\n        }\n\n        ReactDOM.render(\n            <HelloWorld />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0420\u0438\u0441\u0443\u0435\u043C \u0432\u0435\u0440\u0441\u0442\u043A\u0443 \u043F\u043E\u0441\u043B\u043E\u0436\u043D\u0435\u0435' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Example1 extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <h1>Hello</h1>\n                        <span>some text here</span>\n                        <button>Click!</button>\n                    </div>\n                );\n            }\n        }\n\n        ReactDOM.render(\n            <Example1 />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0421\u0430\u043C\u043E\u0437\u0430\u043A\u0440\u044B\u0432\u0430\u044E\u0449\u0438\u0435\u0441\u044F \u0442\u0435\u0433\u0438 (<div></div> \u0438 <div /> \u0434\u0435\u043B\u0430\u044E\u0442 \u043E\u0434\u043D\u043E \u0438 \u0442\u043E \u0436\u0435)' },
+                '\n        class Example extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <div></div>\n                        <div />\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Example />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u0442\u0438\u043B\u0438 (\u043E\u043D\u0438 \u043E\u0431\u044B\u0447\u043D\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442\u0441\u044F, \u0435\u0441\u043B\u0438 \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u043E \u043C\u0435\u043D\u044F\u0442\u044C \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B (\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440 \u0443 \u0432\u0430\u0441 \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u0448\u0438\u0440\u0438\u043D\u0430))' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Example1 extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <div\n                            style={{\n                                background: \'red\',\n                                width: 100,\n                                height: 100,\n                                borderRadius: \'50%\',\n                            }}\n                        ></div>\n                        <h1 style={{ fontSize: 32, color: \'green\' }}>\u041A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A</h1>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Example1 />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u0442\u0438\u043B\u0438 \u0447\u0435\u0440\u0435\u0437 css (\u0443 \u0432\u0430\u0441 \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u0444\u0430\u0439\u043B\u0438\u043A Example.css \u0440\u044F\u0434\u043E\u043C)' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        import \'./Example.css\';\n        \n        class Example1 extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <div className="redCircle"></div>\n                        <h1 className="prettyTitle">\u041A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A</h1>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Example1 />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: 'Example.css' },
+                '\n        .circle {\n            display: block;\n            width: 100px;\n            height: 100px;\n            background: red;\n            border-radius: 50%;\n        }\n        \n        .prettyTitle {\n            color: green;\n            font-size: 16px;\n        }\n                '
+            )
+        ),
+        React.createElement(
+            _LayoutComponents.LongDescription,
+            { title: '\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0430 React (\u043F\u043E\u0441\u043B\u043E\u0436\u043D\u0435\u0435)' },
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u041F\u0435\u0440\u0435\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u044B (\u043D\u0430\u0440\u0438\u0441\u043E\u0432\u0430\u043B\u0438 \u0442\u0440\u0435\u0445 \u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u044B\u0445 \u043A\u043E\u0442\u043E\u0432)' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Cat extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <h2>\u0418\u043C\u044F: \u041F\u0443\u0448\u043E\u043A</h2>\n                        <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                        <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n                    </div>\n                );\n            }\n        }\n        \n        class Cats extends React.Component {\n            render() {\n                return (\n                    <div>\n                        ',
+                React.createElement(
+                    'b',
+                    null,
+                    '<Cat />'
+                ),
+                '\n                        ',
+                React.createElement(
+                    'b',
+                    null,
+                    '<Cat />'
+                ),
+                '\n                        ',
+                React.createElement(
+                    'b',
+                    null,
+                    '<Cat />'
+                ),
+                '\n                        ',
+                React.createElement(
+                    'b',
+                    null,
+                    '<Cat />'
+                ),
+                '\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Cats />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0412\u043E\u0442 \u0442\u0430\u043A \u043C\u043E\u0436\u043D\u043E \u0434\u0430\u0442\u044C \u043A\u043E\u0442\u0430\u043C \u0440\u0430\u0437\u043D\u044B\u0435 \u0438\u043C\u0435\u043D\u0430 (\u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u043E\u0432)' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Cat extends React.Component {\n            render() {\n                ',
+                React.createElement(
+                    'b',
+                    null,
+                    'const name = this.props.name;'
+                ),
+                '\n        \n                return (\n                    <div>\n                        <h2>\u0418\u043C\u044F: {name}</h2>\n                        <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                        <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n                    </div>\n                );\n            }\n        }\n        \n        class Cats extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <Cat ',
+                React.createElement(
+                    'b',
+                    null,
+                    'name="Пушок"'
+                ),
+                '></Cat>\n                        <Cat ',
+                React.createElement(
+                    'b',
+                    null,
+                    'name="Снежок"'
+                ),
+                '></Cat>\n                        <Cat ',
+                React.createElement(
+                    'b',
+                    null,
+                    'name="Васька"'
+                ),
+                '></Cat>\n                        <Cat ',
+                React.createElement(
+                    'b',
+                    null,
+                    'name="Кот"'
+                ),
+                '></Cat>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Cats />,\n            document.getElementById(\'root\')\n        );\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0414\u043E\u0434\u0435\u043B\u044B\u0432\u0430\u0435\u043C \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430 \u043A\u043E\u0442\u043E\u0432' },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Cat extends React.Component {\n            render() {\n                const name = this.props.name;\n                const color = this.props.color;\n        \n                return (\n                    <div>\n                        <h2>\u0418\u043C\u044F: {name}</h2>\n                        <p>\u0426\u0432\u0435\u0442: {color}</p>\n                        <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n                    </div>\n                );\n            }\n        }\n        \n        class Cats extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <Cat\n                            name="\u041F\u0443\u0448\u043E\u043A"\n                            color="\u0420\u044B\u0436\u044B\u0439"\n                            hobby="\u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E"\n                        >\n                        </Cat>\n                        <Cat\n                            name="\u0421\u043D\u0435\u0436\u043E\u043A"\n                            color="\u0427\u0435\u0440\u043D\u044B\u0439"\n                            hobby="\u0413\u0440\u044B\u0437\u0442\u044C \u043E\u0431\u043E\u0438"\n                        >\n                        </Cat>\n                        <Cat\n                            name="\u0412\u0430\u0441\u044C\u043A\u0430"\n                            color="\u0411\u0435\u043B\u044B\u0439"\n                            hobby="\u0412\u0440\u0435\u0437\u0430\u0442\u044C\u0441\u044F \u0432 \u0441\u0442\u0435\u043D\u044B"\n                        >\n                        </Cat>\n                        <Cat\n                            name="\u041A\u043E\u0442"\n                            color="\u0421\u0435\u0440\u044B\u0439"\n                            hobby="\u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E"\n                        >\n                        </Cat>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Cats />,\n            document.getElementById(\'root\')\n        );\n                '
+            )
+        ),
         React.createElement(_LayoutComponents.Links, {
             links: [{
                 url: 'https://ru.reactjs.org/docs/getting-started.html',
@@ -40581,6 +40764,17 @@ var Lesson3 = exports.Lesson3 = function Lesson3() {
         React.createElement(_LayoutComponents.BasicConcepts, {
             items: ['Как работать с состоянием в React.', 'Оно нам нужно, когда мы хотим что-либо запомнить', 'Например, что пользователь нажимал на кнопку', 'Как нарисовать коллекцию (например если у нас есть список студентов)', 'Как обрабатывать события пользователя']
         }),
+        React.createElement(
+            _LayoutComponents.LongDescription,
+            { title: '\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0430 React, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043C\u044B \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u043B\u0438' },
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                {
+                    title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0432\u044B\u043F\u0430\u0434\u0430\u044E\u0449\u0435\u0433\u043E \u0442\u0435\u043A\u0441\u0442\u0430: \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u0442\u0435\u043A\u0441\u0442\u0430 \u043D\u0435\u0442, \u0430 \u043D\u0430\u0436\u0438\u043C\u0430\u0435\u043C \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0443 \u0438 \u043E\u043D \u0435\u0441\u0442\u044C'
+                },
+                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class SmartText extends React.Component {\n            state = { open: false }\n        \n            handleOpen = () => {\n                this.setState({ open: !this.state.open });\n            }\n        \n            render() {\n                const open = this.state.open;\n        \n                return (\n                    <div>\n                        {open && <div>\u041A\u0430\u043A\u043E\u0439-\u0442\u043E \u0434\u043B\u0438\u043D\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442</div>}\n                        <button onClick={this.handleOpen}>Click</button>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <SmartText />,\n            document.getElementById(\'root\')\n        );                \n                '
+            )
+        ),
         React.createElement(_LayoutComponents.Links, {
             links: [{
                 url: 'https://ru.reactjs.org/docs/state-and-lifecycle.html',
