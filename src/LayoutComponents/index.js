@@ -1,6 +1,6 @@
 export {
+    CodeExample,
     Section,
-    Description,
     LongDescription,
     BasicConcepts,
     Links

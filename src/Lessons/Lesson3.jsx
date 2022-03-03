@@ -3,8 +3,9 @@ import * as React from 'react';
 import {
     Links,
     BasicConcepts,
-    // LongDescription,
-    Section
+    Section,
+    LongDescription,
+    CodeExample
 } from '../LayoutComponents';
 
 export const Lesson3 = () => (
@@ -18,9 +19,40 @@ export const Lesson3 = () => (
                 'Как обрабатывать события пользователя'
             ]}
         />
-        {/* <LongDescription>
-            Еще не готово
-        </LongDescription> */}
+        <LongDescription title="Примеры на React, которые мы разбирали">
+            <CodeExample
+                title="Пример выпадающего текста: сначала текста нет, а нажимаем на кнопку и он есть"
+            >
+                {`
+        import * as React from 'react';
+        import ReactDOM from 'react-dom';
+        
+        class SmartText extends React.Component {
+            state = { open: false }
+        
+            handleOpen = () => {
+                this.setState({ open: !this.state.open });
+            }
+        
+            render() {
+                const open = this.state.open;
+        
+                return (
+                    <div>
+                        {open && <div>Какой-то длинный текст</div>}
+                        <button onClick={this.handleOpen}>Click</button>
+                    </div>
+                );
+            }
+        }
+        
+        ReactDOM.render(
+            <SmartText />,
+            document.getElementById('root')
+        );                
+                `}
+            </CodeExample>
+        </LongDescription>
         <Links
             links={[
                 {

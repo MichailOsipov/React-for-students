@@ -14,12 +14,6 @@ Section.propTypes = {
     title: PropTypes.string
 };
 
-export const Description = ({ children }) => (
-    <span>
-        {children}
-    </span>
-);
-
 export class LongDescription extends React.Component {
     state = { open: false };
 
@@ -28,11 +22,17 @@ export class LongDescription extends React.Component {
     }
 
     render() {
+        const title = this.props.title;
+        const description = this.props.description;
+
         return (
             <div>
-                <span className={styles.longDescriptionLabel}>Подробное описание:</span>
+                <h3>{title}</h3>
+                <div>
+                    {description}
+                </div>
                 <button type="button" onClick={this.onToggleOpen}>
-                    {this.state.open ? 'Спрятать' : 'Показать'}
+                    {this.state.open ? 'Скрыть' : 'Подробнее'}
                 </button>
                 {this.state.open && (
                     <div>
@@ -43,6 +43,11 @@ export class LongDescription extends React.Component {
         );
     }
 }
+
+LongDescription.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string
+};
 
 export const BasicConcepts = ({ items }) => (
     <div className={styles.basicConcepts}>
@@ -85,4 +90,19 @@ Links.propTypes = {
         url: PropTypes.string,
         text: PropTypes.string
     }))
+};
+
+export const CodeExample = ({ title, description, children }) => (
+    <div>
+        <h4>{title}</h4>
+        <p>{description}</p>
+        <pre className={styles.codeBox}>
+            {children}
+        </pre>
+    </div>
+);
+
+CodeExample.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string
 };

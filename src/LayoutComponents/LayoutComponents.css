@@ -15,11 +15,6 @@
     margin-bottom: 5px;
 }
 
-.longDescriptionLabel {
-    display: inline-block;
-    margin-right: 10px;
-}
-
 .linksTitle {
     margin-bottom: 5px;
 }
@@ -27,4 +22,12 @@
 .linkText {
     display: inline-block;
     margin-right: 10px;
+}
+
+.codeBox {
+    border: 2px solid #4358a8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 20px;
 }
