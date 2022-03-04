@@ -4,7 +4,8 @@ import { Section } from './LayoutComponents';
 import {
     Lesson1,
     Lesson2,
-    Lesson3
+    Lesson3,
+    Lesson4
 } from './Lessons';
 import styles from './Course.css';
 
@@ -14,6 +15,7 @@ export const Course = () => (
         <Lesson1 />
         <Lesson2 />
         <Lesson3 />
+        <Lesson4 />
         <Section title="Посещения занятий и баллы:">
             <a
                 target="_blank"

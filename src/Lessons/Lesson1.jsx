@@ -32,53 +32,53 @@ export const Lesson1 = () => (
         >
             <CodeExample title="Пример файла верстки index.html">
                 {`
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <title>Hello world</title>
-                <link rel="stylesheet" href="styles.css">
-            </head>
-            <body>
-                <div id="root"></div>
-                <!-->Здесь ниже добавляем скрипт</-->
-                <script type="text/javascript" src="main.js"></script>
-            </body>
-        </html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello world</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <!-->Здесь ниже добавляем скрипт</-->
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
                 `}
             </CodeExample>
             <CodeExample title="Пример файла стилей styles.css">
                 {`
-        h1 {
-            color: red;
-            font-size: 35px;
-        }
-        
-        .box {
-            width: 100px;
-            height: 50px;
-            background: red;
-        }
+h1 {
+    color: red;
+    font-size: 35px;
+}
+
+.box {
+    width: 100px;
+    height: 50px;
+    background: red;
+}
                 `}
             </CodeExample>
             <CodeExample title="Пример файла скриптов main.js">
                 {`
-        const button = document.getElementById('button');
+const button = document.getElementById('button');
 
-        button.AddEventListenter('click', () => {
-            alert('Hello from JS');
-        });
+button.AddEventListenter('click', () => {
+    alert('Hello from JS');
+});
                 `}
             </CodeExample>
         </LongDescription>
         <LongDescription title="Пишем первые скрипты на JS (в html должен быть <div id='button'></div>)">
             <CodeExample title="Пример файла скриптов main.js">
                 {`
-        const button = document.getElementById('button');
+const button = document.getElementById('button');
 
-        button.AddEventListenter('click', () => {
-            alert('Hello from JS');
-        });
+button.AddEventListenter('click', () => {
+    alert('Hello from JS');
+});
                 `}
             </CodeExample>
         </LongDescription>
