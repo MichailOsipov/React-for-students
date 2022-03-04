@@ -743,11 +743,11 @@ module.exports = function (TYPE, $create) {
 "use strict";
 
 if (__webpack_require__(7)) {
-  var LIBRARY = __webpack_require__(30);
+  var LIBRARY = __webpack_require__(31);
   var global = __webpack_require__(2);
   var fails = __webpack_require__(3);
   var $export = __webpack_require__(0);
-  var $typed = __webpack_require__(65);
+  var $typed = __webpack_require__(66);
   var $buffer = __webpack_require__(96);
   var ctx = __webpack_require__(20);
   var anInstance = __webpack_require__(41);
@@ -771,11 +771,11 @@ if (__webpack_require__(7)) {
   var uid = __webpack_require__(35);
   var wks = __webpack_require__(5);
   var createArrayMethod = __webpack_require__(27);
-  var createArrayIncludes = __webpack_require__(55);
+  var createArrayIncludes = __webpack_require__(56);
   var speciesConstructor = __webpack_require__(53);
   var ArrayIterators = __webpack_require__(90);
   var Iterators = __webpack_require__(48);
-  var $iterDetect = __webpack_require__(60);
+  var $iterDetect = __webpack_require__(61);
   var setSpecies = __webpack_require__(40);
   var arrayFill = __webpack_require__(89);
   var arrayCopyWithin = __webpack_require__(119);
@@ -1282,13 +1282,28 @@ module.exports = {
 
 /***/ }),
 /* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(345);
+} else {
+  module.exports = __webpack_require__(346);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = false;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var META = __webpack_require__(35)('meta');
@@ -1347,7 +1362,7 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.31 Array.prototype[@@unscopables]
@@ -1358,21 +1373,6 @@ module.exports = function (key) {
   ArrayProto[UNSCOPABLES][key] = true;
 };
 
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(345);
-} else {
-  module.exports = __webpack_require__(346);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
 /* 34 */
@@ -1667,7 +1667,7 @@ var store = global[SHARED] || (global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: core.version,
-  mode: __webpack_require__(30) ? 'pure' : 'global',
+  mode: __webpack_require__(31) ? 'pure' : 'global',
   copyright: '© 2020 Denis Pushkarev (zloirock.ru)'
 });
 
@@ -1827,6 +1827,50 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _LayoutComponents = __webpack_require__(356);
+
+Object.defineProperty(exports, 'CodeExample', {
+    enumerable: true,
+    get: function get() {
+        return _LayoutComponents.CodeExample;
+    }
+});
+Object.defineProperty(exports, 'Section', {
+    enumerable: true,
+    get: function get() {
+        return _LayoutComponents.Section;
+    }
+});
+Object.defineProperty(exports, 'LongDescription', {
+    enumerable: true,
+    get: function get() {
+        return _LayoutComponents.LongDescription;
+    }
+});
+Object.defineProperty(exports, 'BasicConcepts', {
+    enumerable: true,
+    get: function get() {
+        return _LayoutComponents.BasicConcepts;
+    }
+});
+Object.defineProperty(exports, 'Links', {
+    enumerable: true,
+    get: function get() {
+        return _LayoutComponents.Links;
+    }
+});
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(16);
@@ -1853,14 +1897,14 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -1871,7 +1915,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(22);
@@ -1894,7 +1938,7 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
@@ -1908,7 +1952,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR = __webpack_require__(5)('iterator');
@@ -1936,7 +1980,7 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1964,7 +2008,7 @@ module.exports = function (R, S) {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2067,7 +2111,7 @@ module.exports = function (KEY, length, exec) {
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2);
@@ -2077,7 +2121,7 @@ module.exports = navigator && navigator.userAgent || '';
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2086,12 +2130,12 @@ var global = __webpack_require__(2);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(12);
 var redefineAll = __webpack_require__(43);
-var meta = __webpack_require__(31);
+var meta = __webpack_require__(32);
 var forOf = __webpack_require__(42);
 var anInstance = __webpack_require__(41);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
-var $iterDetect = __webpack_require__(60);
+var $iterDetect = __webpack_require__(61);
 var setToStringTag = __webpack_require__(45);
 var inheritIfRequired = __webpack_require__(77);
 
@@ -2169,7 +2213,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2);
@@ -2203,13 +2247,13 @@ module.exports = {
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // Forced replacement prototype accessors methods
-module.exports = __webpack_require__(30) || !__webpack_require__(3)(function () {
+module.exports = __webpack_require__(31) || !__webpack_require__(3)(function () {
   var K = Math.random();
   // In FF throws only define methods
   // eslint-disable-next-line no-undef, no-useless-call
@@ -2219,7 +2263,7 @@ module.exports = __webpack_require__(30) || !__webpack_require__(3)(function () 
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2238,7 +2282,7 @@ module.exports = function (COLLECTION) {
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2273,50 +2317,6 @@ module.exports = function (COLLECTION) {
 
 
 /***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _LayoutComponents = __webpack_require__(356);
-
-Object.defineProperty(exports, 'CodeExample', {
-    enumerable: true,
-    get: function get() {
-        return _LayoutComponents.CodeExample;
-    }
-});
-Object.defineProperty(exports, 'Section', {
-    enumerable: true,
-    get: function get() {
-        return _LayoutComponents.Section;
-    }
-});
-Object.defineProperty(exports, 'LongDescription', {
-    enumerable: true,
-    get: function get() {
-        return _LayoutComponents.LongDescription;
-    }
-});
-Object.defineProperty(exports, 'BasicConcepts', {
-    enumerable: true,
-    get: function get() {
-        return _LayoutComponents.BasicConcepts;
-    }
-});
-Object.defineProperty(exports, 'Links', {
-    enumerable: true,
-    get: function get() {
-        return _LayoutComponents.Links;
-    }
-});
-
-/***/ }),
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2335,7 +2335,7 @@ module.exports = function (it) {
 
 var global = __webpack_require__(2);
 var core = __webpack_require__(19);
-var LIBRARY = __webpack_require__(30);
+var LIBRARY = __webpack_require__(31);
 var wksExt = __webpack_require__(103);
 var defineProperty = __webpack_require__(8).f;
 module.exports = function (name) {
@@ -2479,7 +2479,7 @@ module.exports = (!$expm1
 
 "use strict";
 
-var LIBRARY = __webpack_require__(30);
+var LIBRARY = __webpack_require__(31);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(12);
 var hide = __webpack_require__(11);
@@ -2574,7 +2574,7 @@ module.exports = function (Constructor, NAME, next) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(59);
+var isRegExp = __webpack_require__(60);
 var defined = __webpack_require__(25);
 
 module.exports = function (that, searchString, NAME) {
@@ -2684,7 +2684,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(32);
+var addToUnscopables = __webpack_require__(33);
 var step = __webpack_require__(120);
 var Iterators = __webpack_require__(48);
 var toIObject = __webpack_require__(16);
@@ -2790,7 +2790,7 @@ module.exports = patchedExec;
 
 "use strict";
 
-var at = __webpack_require__(58)(true);
+var at = __webpack_require__(59)(true);
 
  // `AdvanceStringIndex` abstract operation
 // https://tc39.github.io/ecma262/#sec-advancestringindex
@@ -2997,8 +2997,8 @@ module.exports.f = function (C) {
 
 var global = __webpack_require__(2);
 var DESCRIPTORS = __webpack_require__(7);
-var LIBRARY = __webpack_require__(30);
-var $typed = __webpack_require__(65);
+var LIBRARY = __webpack_require__(31);
+var $typed = __webpack_require__(66);
 var hide = __webpack_require__(11);
 var redefineAll = __webpack_require__(43);
 var fails = __webpack_require__(3);
@@ -3905,7 +3905,7 @@ exports.f = __webpack_require__(5);
 
 var has = __webpack_require__(15);
 var toIObject = __webpack_require__(16);
-var arrayIndexOf = __webpack_require__(55)(false);
+var arrayIndexOf = __webpack_require__(56)(false);
 var IE_PROTO = __webpack_require__(72)('IE_PROTO');
 
 module.exports = function (object, names) {
@@ -3975,7 +3975,7 @@ module.exports.f = function getOwnPropertyNames(it) {
 // 19.1.2.1 Object.assign(target, source, ...)
 var DESCRIPTORS = __webpack_require__(7);
 var getKeys = __webpack_require__(36);
-var gOPS = __webpack_require__(56);
+var gOPS = __webpack_require__(57);
 var pIE = __webpack_require__(51);
 var toObject = __webpack_require__(9);
 var IObject = __webpack_require__(50);
@@ -4330,7 +4330,7 @@ var validate = __webpack_require__(44);
 var MAP = 'Map';
 
 // 23.1 Map Objects
-module.exports = __webpack_require__(64)(MAP, function (get) {
+module.exports = __webpack_require__(65)(MAP, function (get) {
   return function Map() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
@@ -4361,7 +4361,7 @@ var $iterDefine = __webpack_require__(81);
 var step = __webpack_require__(120);
 var setSpecies = __webpack_require__(40);
 var DESCRIPTORS = __webpack_require__(7);
-var fastKey = __webpack_require__(31).fastKey;
+var fastKey = __webpack_require__(32).fastKey;
 var validate = __webpack_require__(44);
 var SIZE = DESCRIPTORS ? '_s' : 'size';
 
@@ -4507,7 +4507,7 @@ var validate = __webpack_require__(44);
 var SET = 'Set';
 
 // 23.2 Set Objects
-module.exports = __webpack_require__(64)(SET, function (get) {
+module.exports = __webpack_require__(65)(SET, function (get) {
   return function Set() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
@@ -4526,7 +4526,7 @@ module.exports = __webpack_require__(64)(SET, function (get) {
 var global = __webpack_require__(2);
 var each = __webpack_require__(27)(0);
 var redefine = __webpack_require__(12);
-var meta = __webpack_require__(31);
+var meta = __webpack_require__(32);
 var assign = __webpack_require__(107);
 var weak = __webpack_require__(129);
 var isObject = __webpack_require__(4);
@@ -4561,7 +4561,7 @@ var methods = {
 };
 
 // 23.3 WeakMap Objects
-var $WeakMap = module.exports = __webpack_require__(64)(WEAK_MAP, wrapper, methods, weak, true, true);
+var $WeakMap = module.exports = __webpack_require__(65)(WEAK_MAP, wrapper, methods, weak, true, true);
 
 // IE11 WeakMap frozen keys fix
 if (NATIVE_WEAK_MAP && IS_IE11) {
@@ -4591,7 +4591,7 @@ if (NATIVE_WEAK_MAP && IS_IE11) {
 "use strict";
 
 var redefineAll = __webpack_require__(43);
-var getWeak = __webpack_require__(31).getWeak;
+var getWeak = __webpack_require__(32).getWeak;
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
 var anInstance = __webpack_require__(41);
@@ -4698,7 +4698,7 @@ module.exports = function (it) {
 
 // all object keys, includes non-enumerable and symbols
 var gOPN = __webpack_require__(39);
-var gOPS = __webpack_require__(56);
+var gOPS = __webpack_require__(57);
 var anObject = __webpack_require__(1);
 var Reflect = __webpack_require__(2).Reflect;
 module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
@@ -4715,7 +4715,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 "use strict";
 
 // https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
-var isArray = __webpack_require__(57);
+var isArray = __webpack_require__(58);
 var isObject = __webpack_require__(4);
 var toLength = __webpack_require__(6);
 var ctx = __webpack_require__(20);
@@ -5151,7 +5151,7 @@ var has = __webpack_require__(15);
 var DESCRIPTORS = __webpack_require__(7);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(12);
-var META = __webpack_require__(31).KEY;
+var META = __webpack_require__(32).KEY;
 var $fails = __webpack_require__(3);
 var shared = __webpack_require__(49);
 var setToStringTag = __webpack_require__(45);
@@ -5160,7 +5160,7 @@ var wks = __webpack_require__(5);
 var wksExt = __webpack_require__(103);
 var wksDefine = __webpack_require__(71);
 var enumKeys = __webpack_require__(146);
-var isArray = __webpack_require__(57);
+var isArray = __webpack_require__(58);
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
 var toObject = __webpack_require__(9);
@@ -5170,7 +5170,7 @@ var createDesc = __webpack_require__(34);
 var _create = __webpack_require__(38);
 var gOPNExt = __webpack_require__(106);
 var $GOPD = __webpack_require__(17);
-var $GOPS = __webpack_require__(56);
+var $GOPS = __webpack_require__(57);
 var $DP = __webpack_require__(8);
 var $keys = __webpack_require__(36);
 var gOPD = $GOPD.f;
@@ -5299,7 +5299,7 @@ if (!USE_NATIVE) {
   __webpack_require__(51).f = $propertyIsEnumerable;
   $GOPS.f = $getOwnPropertySymbols;
 
-  if (DESCRIPTORS && !__webpack_require__(30)) {
+  if (DESCRIPTORS && !__webpack_require__(31)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -5405,7 +5405,7 @@ module.exports = __webpack_require__(49)('native-function-to-string', Function.t
 
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(36);
-var gOPS = __webpack_require__(56);
+var gOPS = __webpack_require__(57);
 var pIE = __webpack_require__(51);
 module.exports = function (it) {
   var result = getKeys(it);
@@ -5508,7 +5508,7 @@ __webpack_require__(26)('getOwnPropertyNames', function () {
 
 // 19.1.2.5 Object.freeze(O)
 var isObject = __webpack_require__(4);
-var meta = __webpack_require__(31).onFreeze;
+var meta = __webpack_require__(32).onFreeze;
 
 __webpack_require__(26)('freeze', function ($freeze) {
   return function freeze(it) {
@@ -5523,7 +5523,7 @@ __webpack_require__(26)('freeze', function ($freeze) {
 
 // 19.1.2.17 Object.seal(O)
 var isObject = __webpack_require__(4);
-var meta = __webpack_require__(31).onFreeze;
+var meta = __webpack_require__(32).onFreeze;
 
 __webpack_require__(26)('seal', function ($seal) {
   return function seal(it) {
@@ -5538,7 +5538,7 @@ __webpack_require__(26)('seal', function ($seal) {
 
 // 19.1.2.15 Object.preventExtensions(O)
 var isObject = __webpack_require__(4);
-var meta = __webpack_require__(31).onFreeze;
+var meta = __webpack_require__(32).onFreeze;
 
 __webpack_require__(26)('preventExtensions', function ($preventExtensions) {
   return function preventExtensions(it) {
@@ -6383,7 +6383,7 @@ __webpack_require__(47)('trim', function ($trim) {
 
 "use strict";
 
-var $at = __webpack_require__(58)(true);
+var $at = __webpack_require__(59)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
 __webpack_require__(81)(String, 'String', function (iterated) {
@@ -6408,7 +6408,7 @@ __webpack_require__(81)(String, 'String', function (iterated) {
 "use strict";
 
 var $export = __webpack_require__(0);
-var $at = __webpack_require__(58)(false);
+var $at = __webpack_require__(59)(false);
 $export($export.P, 'String', {
   // 21.1.3.3 String.prototype.codePointAt(pos)
   codePointAt: function codePointAt(pos) {
@@ -6813,7 +6813,7 @@ module.exports = function (hint) {
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Array', { isArray: __webpack_require__(57) });
+$export($export.S, 'Array', { isArray: __webpack_require__(58) });
 
 
 /***/ }),
@@ -6831,7 +6831,7 @@ var toLength = __webpack_require__(6);
 var createProperty = __webpack_require__(86);
 var getIterFn = __webpack_require__(87);
 
-$export($export.S + $export.F * !__webpack_require__(60)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(61)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -6993,7 +6993,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4);
-var isArray = __webpack_require__(57);
+var isArray = __webpack_require__(58);
 var SPECIES = __webpack_require__(5)('species');
 
 module.exports = function (original) {
@@ -7119,7 +7119,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].reduceRight, true), 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $indexOf = __webpack_require__(55)(false);
+var $indexOf = __webpack_require__(56)(false);
 var $native = [].indexOf;
 var NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
@@ -7172,7 +7172,7 @@ var $export = __webpack_require__(0);
 
 $export($export.P, 'Array', { copyWithin: __webpack_require__(119) });
 
-__webpack_require__(32)('copyWithin');
+__webpack_require__(33)('copyWithin');
 
 
 /***/ }),
@@ -7184,7 +7184,7 @@ var $export = __webpack_require__(0);
 
 $export($export.P, 'Array', { fill: __webpack_require__(89) });
 
-__webpack_require__(32)('fill');
+__webpack_require__(33)('fill');
 
 
 /***/ }),
@@ -7205,7 +7205,7 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(32)(KEY);
+__webpack_require__(33)(KEY);
 
 
 /***/ }),
@@ -7226,7 +7226,7 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(32)(KEY);
+__webpack_require__(33)(KEY);
 
 
 /***/ }),
@@ -7244,7 +7244,7 @@ var global = __webpack_require__(2);
 var inheritIfRequired = __webpack_require__(77);
 var dP = __webpack_require__(8).f;
 var gOPN = __webpack_require__(39).f;
-var isRegExp = __webpack_require__(59);
+var isRegExp = __webpack_require__(60);
 var $flags = __webpack_require__(52);
 var $RegExp = global.RegExp;
 var Base = $RegExp;
@@ -7327,10 +7327,10 @@ if (__webpack_require__(3)(function () { return $toString.call({ source: 'a', fl
 var anObject = __webpack_require__(1);
 var toLength = __webpack_require__(6);
 var advanceStringIndex = __webpack_require__(92);
-var regExpExec = __webpack_require__(61);
+var regExpExec = __webpack_require__(62);
 
 // @@match logic
-__webpack_require__(62)('match', 1, function (defined, MATCH, $match, maybeCallNative) {
+__webpack_require__(63)('match', 1, function (defined, MATCH, $match, maybeCallNative) {
   return [
     // `String.prototype.match` method
     // https://tc39.github.io/ecma262/#sec-string.prototype.match
@@ -7376,7 +7376,7 @@ var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(6);
 var toInteger = __webpack_require__(22);
 var advanceStringIndex = __webpack_require__(92);
-var regExpExec = __webpack_require__(61);
+var regExpExec = __webpack_require__(62);
 var max = Math.max;
 var min = Math.min;
 var floor = Math.floor;
@@ -7388,7 +7388,7 @@ var maybeToString = function (it) {
 };
 
 // @@replace logic
-__webpack_require__(62)('replace', 2, function (defined, REPLACE, $replace, maybeCallNative) {
+__webpack_require__(63)('replace', 2, function (defined, REPLACE, $replace, maybeCallNative) {
   return [
     // `String.prototype.replace` method
     // https://tc39.github.io/ecma262/#sec-string.prototype.replace
@@ -7498,10 +7498,10 @@ __webpack_require__(62)('replace', 2, function (defined, REPLACE, $replace, mayb
 
 var anObject = __webpack_require__(1);
 var sameValue = __webpack_require__(108);
-var regExpExec = __webpack_require__(61);
+var regExpExec = __webpack_require__(62);
 
 // @@search logic
-__webpack_require__(62)('search', 1, function (defined, SEARCH, $search, maybeCallNative) {
+__webpack_require__(63)('search', 1, function (defined, SEARCH, $search, maybeCallNative) {
   return [
     // `String.prototype.search` method
     // https://tc39.github.io/ecma262/#sec-string.prototype.search
@@ -7534,12 +7534,12 @@ __webpack_require__(62)('search', 1, function (defined, SEARCH, $search, maybeCa
 "use strict";
 
 
-var isRegExp = __webpack_require__(59);
+var isRegExp = __webpack_require__(60);
 var anObject = __webpack_require__(1);
 var speciesConstructor = __webpack_require__(53);
 var advanceStringIndex = __webpack_require__(92);
 var toLength = __webpack_require__(6);
-var callRegExpExec = __webpack_require__(61);
+var callRegExpExec = __webpack_require__(62);
 var regexpExec = __webpack_require__(91);
 var fails = __webpack_require__(3);
 var $min = Math.min;
@@ -7553,7 +7553,7 @@ var MAX_UINT32 = 0xffffffff;
 var SUPPORTS_Y = !fails(function () { RegExp(MAX_UINT32, 'y'); });
 
 // @@split logic
-__webpack_require__(62)('split', 2, function (defined, SPLIT, $split, maybeCallNative) {
+__webpack_require__(63)('split', 2, function (defined, SPLIT, $split, maybeCallNative) {
   var internalSplit;
   if (
     'abbc'[$SPLIT](/(b)*/)[1] == 'c' ||
@@ -7674,7 +7674,7 @@ __webpack_require__(62)('split', 2, function (defined, SPLIT, $split, maybeCallN
 
 "use strict";
 
-var LIBRARY = __webpack_require__(30);
+var LIBRARY = __webpack_require__(31);
 var global = __webpack_require__(2);
 var ctx = __webpack_require__(20);
 var classof = __webpack_require__(46);
@@ -7688,7 +7688,7 @@ var task = __webpack_require__(93).set;
 var microtask = __webpack_require__(94)();
 var newPromiseCapabilityModule = __webpack_require__(95);
 var perform = __webpack_require__(123);
-var userAgent = __webpack_require__(63);
+var userAgent = __webpack_require__(64);
 var promiseResolve = __webpack_require__(124);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
@@ -7915,7 +7915,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return promiseResolve(LIBRARY && this === Wrapper ? $Promise : this, x);
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(60)(function (iter) {
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(61)(function (iter) {
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -7972,7 +7972,7 @@ var validate = __webpack_require__(44);
 var WEAK_SET = 'WeakSet';
 
 // 23.4 WeakSet Objects
-__webpack_require__(64)(WEAK_SET, function (get) {
+__webpack_require__(65)(WEAK_SET, function (get) {
   return function WeakSet() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.4.3.1 WeakSet.prototype.add(value)
@@ -7989,7 +7989,7 @@ __webpack_require__(64)(WEAK_SET, function (get) {
 "use strict";
 
 var $export = __webpack_require__(0);
-var $typed = __webpack_require__(65);
+var $typed = __webpack_require__(66);
 var buffer = __webpack_require__(96);
 var anObject = __webpack_require__(1);
 var toAbsoluteIndex = __webpack_require__(37);
@@ -8040,7 +8040,7 @@ __webpack_require__(40)(ARRAY_BUFFER);
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-$export($export.G + $export.W + $export.F * !__webpack_require__(65).ABV, {
+$export($export.G + $export.W + $export.F * !__webpack_require__(66).ABV, {
   DataView: __webpack_require__(96).DataView
 });
 
@@ -8488,7 +8488,7 @@ if (setProto) $export($export.S, 'Reflect', {
 
 // https://github.com/tc39/Array.prototype.includes
 var $export = __webpack_require__(0);
-var $includes = __webpack_require__(55)(true);
+var $includes = __webpack_require__(56)(true);
 
 $export($export.P, 'Array', {
   includes: function includes(el /* , fromIndex = 0 */) {
@@ -8496,7 +8496,7 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(32)('includes');
+__webpack_require__(33)('includes');
 
 
 /***/ }),
@@ -8525,7 +8525,7 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(32)('flatMap');
+__webpack_require__(33)('flatMap');
 
 
 /***/ }),
@@ -8553,7 +8553,7 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(32)('flatten');
+__webpack_require__(33)('flatten');
 
 
 /***/ }),
@@ -8564,7 +8564,7 @@ __webpack_require__(32)('flatten');
 
 // https://github.com/mathiasbynens/String.prototype.at
 var $export = __webpack_require__(0);
-var $at = __webpack_require__(58)(true);
+var $at = __webpack_require__(59)(true);
 var $fails = __webpack_require__(3);
 
 var FORCED = $fails(function () {
@@ -8587,7 +8587,7 @@ $export($export.P + $export.F * FORCED, 'String', {
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
 var $pad = __webpack_require__(133);
-var userAgent = __webpack_require__(63);
+var userAgent = __webpack_require__(64);
 
 // https://github.com/zloirock/core-js/issues/280
 var WEBKIT_BUG = /Version\/10\.\d+(\.\d+)?( Mobile\/\w+)? Safari\//.test(userAgent);
@@ -8608,7 +8608,7 @@ $export($export.P + $export.F * WEBKIT_BUG, 'String', {
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
 var $pad = __webpack_require__(133);
-var userAgent = __webpack_require__(63);
+var userAgent = __webpack_require__(64);
 
 // https://github.com/zloirock/core-js/issues/280
 var WEBKIT_BUG = /Version\/10\.\d+(\.\d+)?( Mobile\/\w+)? Safari\//.test(userAgent);
@@ -8658,7 +8658,7 @@ __webpack_require__(47)('trimRight', function ($trim) {
 var $export = __webpack_require__(0);
 var defined = __webpack_require__(25);
 var toLength = __webpack_require__(6);
-var isRegExp = __webpack_require__(59);
+var isRegExp = __webpack_require__(60);
 var getFlags = __webpack_require__(52);
 var RegExpProto = RegExp.prototype;
 
@@ -8769,7 +8769,7 @@ var aFunction = __webpack_require__(10);
 var $defineProperty = __webpack_require__(8);
 
 // B.2.2.2 Object.prototype.__defineGetter__(P, getter)
-__webpack_require__(7) && $export($export.P + __webpack_require__(66), 'Object', {
+__webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object', {
   __defineGetter__: function __defineGetter__(P, getter) {
     $defineProperty.f(toObject(this), P, { get: aFunction(getter), enumerable: true, configurable: true });
   }
@@ -8788,7 +8788,7 @@ var aFunction = __webpack_require__(10);
 var $defineProperty = __webpack_require__(8);
 
 // B.2.2.3 Object.prototype.__defineSetter__(P, setter)
-__webpack_require__(7) && $export($export.P + __webpack_require__(66), 'Object', {
+__webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object', {
   __defineSetter__: function __defineSetter__(P, setter) {
     $defineProperty.f(toObject(this), P, { set: aFunction(setter), enumerable: true, configurable: true });
   }
@@ -8808,7 +8808,7 @@ var getPrototypeOf = __webpack_require__(18);
 var getOwnPropertyDescriptor = __webpack_require__(17).f;
 
 // B.2.2.4 Object.prototype.__lookupGetter__(P)
-__webpack_require__(7) && $export($export.P + __webpack_require__(66), 'Object', {
+__webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object', {
   __lookupGetter__: function __lookupGetter__(P) {
     var O = toObject(this);
     var K = toPrimitive(P, true);
@@ -8833,7 +8833,7 @@ var getPrototypeOf = __webpack_require__(18);
 var getOwnPropertyDescriptor = __webpack_require__(17).f;
 
 // B.2.2.5 Object.prototype.__lookupSetter__(P)
-__webpack_require__(7) && $export($export.P + __webpack_require__(66), 'Object', {
+__webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object', {
   __lookupSetter__: function __lookupSetter__(P) {
     var O = toObject(this);
     var K = toPrimitive(P, true);
@@ -8870,7 +8870,7 @@ $export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(135)('Set') 
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
-__webpack_require__(67)('Map');
+__webpack_require__(68)('Map');
 
 
 /***/ }),
@@ -8878,7 +8878,7 @@ __webpack_require__(67)('Map');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
-__webpack_require__(67)('Set');
+__webpack_require__(68)('Set');
 
 
 /***/ }),
@@ -8886,7 +8886,7 @@ __webpack_require__(67)('Set');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
-__webpack_require__(67)('WeakMap');
+__webpack_require__(68)('WeakMap');
 
 
 /***/ }),
@@ -8894,7 +8894,7 @@ __webpack_require__(67)('WeakMap');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
-__webpack_require__(67)('WeakSet');
+__webpack_require__(68)('WeakSet');
 
 
 /***/ }),
@@ -8902,7 +8902,7 @@ __webpack_require__(67)('WeakSet');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
-__webpack_require__(68)('Map');
+__webpack_require__(69)('Map');
 
 
 /***/ }),
@@ -8910,7 +8910,7 @@ __webpack_require__(68)('Map');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
-__webpack_require__(68)('Set');
+__webpack_require__(69)('Set');
 
 
 /***/ }),
@@ -8918,7 +8918,7 @@ __webpack_require__(68)('Set');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
-__webpack_require__(68)('WeakMap');
+__webpack_require__(69)('WeakMap');
 
 
 /***/ }),
@@ -8926,7 +8926,7 @@ __webpack_require__(68)('WeakMap');
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
-__webpack_require__(68)('WeakSet');
+__webpack_require__(69)('WeakSet');
 
 
 /***/ }),
@@ -9592,7 +9592,7 @@ __webpack_require__(40)('Observable');
 // ie9- setTimeout & setInterval additional parameters fix
 var global = __webpack_require__(2);
 var $export = __webpack_require__(0);
-var userAgent = __webpack_require__(63);
+var userAgent = __webpack_require__(64);
 var slice = [].slice;
 var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
 var wrap = function (set) {
@@ -10470,7 +10470,7 @@ module.exports = function (regExp, replace) {
 "use strict";
 
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(30);
 
 var React = _interopRequireWildcard(_react);
 
@@ -10480,7 +10480,7 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _Course = __webpack_require__(355);
 
-__webpack_require__(371);
+__webpack_require__(372);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12503,7 +12503,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(33),n=__webpack_require__(54),r=__webpack_require__(139);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
+var aa=__webpack_require__(30),n=__webpack_require__(54),r=__webpack_require__(139);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
 function ba(a,b,c,d,e,f,g,h,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l)}catch(m){this.onError(m)}}var da=!1,ea=null,fa=!1,ha=null,ia={onError:function(a){da=!0;ea=a}};function ja(a,b,c,d,e,f,g,h,k){da=!1;ea=null;ba.apply(ia,arguments)}function ka(a,b,c,d,e,f,g,h,k){ja.apply(this,arguments);if(da){if(da){var l=ea;da=!1;ea=null}else throw Error(u(198));fa||(fa=!0,ha=l)}}var la=null,ma=null,na=null;
 function oa(a,b,c){var d=a.type||"unknown-event";a.currentTarget=na(c);ka(d,b,void 0,a);a.currentTarget=null}var pa=null,qa={};
 function ra(){if(pa)for(var a in qa){var b=qa[a],c=pa.indexOf(a);if(!(-1<c))throw Error(u(96,a));if(!sa[c]){if(!b.extractEvents)throw Error(u(97,a));sa[c]=b;c=b.eventTypes;for(var d in c){var e=void 0;var f=c[d],g=b,h=d;if(ta.hasOwnProperty(h))throw Error(u(99,h));ta[h]=f;var k=f.phasedRegistrationNames;if(k){for(e in k)k.hasOwnProperty(e)&&ua(k[e],g,h);e=!0}else f.registrationName?(ua(f.registrationName,g,h),e=!0):e=!1;if(!e)throw Error(u(98,d,a));}}}}
@@ -13701,7 +13701,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(33);
+var React = __webpack_require__(30);
 var _assign = __webpack_require__(54);
 var Scheduler = __webpack_require__(139);
 var checkPropTypes = __webpack_require__(97);
@@ -39100,15 +39100,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Course = undefined;
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(30);
 
 var React = _interopRequireWildcard(_react);
 
-var _LayoutComponents = __webpack_require__(69);
+var _LayoutComponents = __webpack_require__(55);
 
 var _Lessons = __webpack_require__(365);
 
-var _Course = __webpack_require__(369);
+var _Course = __webpack_require__(370);
 
 var _Course2 = _interopRequireDefault(_Course);
 
@@ -39128,6 +39128,7 @@ var Course = exports.Course = function Course() {
         React.createElement(_Lessons.Lesson1, null),
         React.createElement(_Lessons.Lesson2, null),
         React.createElement(_Lessons.Lesson3, null),
+        React.createElement(_Lessons.Lesson4, null),
         React.createElement(
             _LayoutComponents.Section,
             { title: '\u041F\u043E\u0441\u0435\u0449\u0435\u043D\u0438\u044F \u0437\u0430\u043D\u044F\u0442\u0438\u0439 \u0438 \u0431\u0430\u043B\u043B\u044B:' },
@@ -39171,7 +39172,7 @@ exports.CodeExample = exports.Links = exports.BasicConcepts = exports.LongDescri
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(30);
 
 var React = _interopRequireWildcard(_react);
 
@@ -40489,6 +40490,15 @@ Object.defineProperty(exports, 'Lesson3', {
     }
 });
 
+var _Lesson4 = __webpack_require__(369);
+
+Object.defineProperty(exports, 'Lesson4', {
+    enumerable: true,
+    get: function get() {
+        return _Lesson4.Lesson4;
+    }
+});
+
 /***/ }),
 /* 366 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -40501,11 +40511,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Lesson1 = undefined;
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(30);
 
 var React = _interopRequireWildcard(_react);
 
-var _LayoutComponents = __webpack_require__(69);
+var _LayoutComponents = __webpack_require__(55);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -40529,17 +40539,17 @@ var Lesson1 = exports.Lesson1 = function Lesson1() {
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0432\u0435\u0440\u0441\u0442\u043A\u0438 index.html' },
-                '\n        <!DOCTYPE html>\n        <html lang="en">\n            <head>\n                <meta charset="UTF-8">\n                <title>Hello world</title>\n                <link rel="stylesheet" href="styles.css">\n            </head>\n            <body>\n                <div id="root"></div>\n                <!-->\u0417\u0434\u0435\u0441\u044C \u043D\u0438\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u043A\u0440\u0438\u043F\u0442</-->\n                <script type="text/javascript" src="main.js"></script>\n            </body>\n        </html>\n                '
+                '\n<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="UTF-8">\n        <title>Hello world</title>\n        <link rel="stylesheet" href="styles.css">\n    </head>\n    <body>\n        <div id="root"></div>\n        <!-->\u0417\u0434\u0435\u0441\u044C \u043D\u0438\u0436\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u043A\u0440\u0438\u043F\u0442</-->\n        <script type="text/javascript" src="main.js"></script>\n    </body>\n</html>\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0441\u0442\u0438\u043B\u0435\u0439 styles.css' },
-                '\n        h1 {\n            color: red;\n            font-size: 35px;\n        }\n        \n        .box {\n            width: 100px;\n            height: 50px;\n            background: red;\n        }\n                '
+                '\nh1 {\n    color: red;\n    font-size: 35px;\n}\n\n.box {\n    width: 100px;\n    height: 50px;\n    background: red;\n}\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0441\u043A\u0440\u0438\u043F\u0442\u043E\u0432 main.js' },
-                '\n        const button = document.getElementById(\'button\');\n\n        button.AddEventListenter(\'click\', () => {\n            alert(\'Hello from JS\');\n        });\n                '
+                '\nconst button = document.getElementById(\'button\');\n\nbutton.AddEventListenter(\'click\', () => {\n    alert(\'Hello from JS\');\n});\n                '
             )
         ),
         React.createElement(
@@ -40548,7 +40558,7 @@ var Lesson1 = exports.Lesson1 = function Lesson1() {
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u0441\u043A\u0440\u0438\u043F\u0442\u043E\u0432 main.js' },
-                '\n        const button = document.getElementById(\'button\');\n\n        button.AddEventListenter(\'click\', () => {\n            alert(\'Hello from JS\');\n        });\n                '
+                '\nconst button = document.getElementById(\'button\');\n\nbutton.AddEventListenter(\'click\', () => {\n    alert(\'Hello from JS\');\n});\n                '
             )
         ),
         React.createElement(_LayoutComponents.Links, {
@@ -40593,11 +40603,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Lesson2 = undefined;
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(30);
 
 var React = _interopRequireWildcard(_react);
 
-var _LayoutComponents = __webpack_require__(69);
+var _LayoutComponents = __webpack_require__(55);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -40616,37 +40626,37 @@ var Lesson2 = exports.Lesson2 = function Lesson2() {
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0421\u0430\u043C\u044B\u0439 \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u043F\u0440\u0438\u043C\u0435\u0440, \u0431\u0430\u0437\u043E\u0432\u0430\u044F \u0432\u0435\u0440\u0441\u0442\u043A\u0430' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        ReactDOM.render(\n            <div>Hello world</div>,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nReactDOM.render(\n    <div>Hello world</div>,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0420\u0438\u0441\u0443\u0435\u043C \u0447\u0442\u043E-\u0442\u043E \u0432 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u043E\u043C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u0435' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class HelloWorld extends React.Component {\n            render() {\n                return (\n                    <div>Hello world!</div>\n                );\n            }\n        }\n\n        ReactDOM.render(\n            <HelloWorld />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass HelloWorld extends React.Component {\n    render() {\n        return (\n            <div>Hello world!</div>\n        );\n    }\n}\n\nReactDOM.render(\n    <HelloWorld />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0420\u0438\u0441\u0443\u0435\u043C \u0432\u0435\u0440\u0441\u0442\u043A\u0443 \u043F\u043E\u0441\u043B\u043E\u0436\u043D\u0435\u0435' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Example1 extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <h1>Hello</h1>\n                        <span>some text here</span>\n                        <button>Click!</button>\n                    </div>\n                );\n            }\n        }\n\n        ReactDOM.render(\n            <Example1 />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Example1 extends React.Component {\n    render() {\n        return (\n            <div>\n                <h1>Hello</h1>\n                <span>some text here</span>\n                <button>Click!</button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Example1 />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0421\u0430\u043C\u043E\u0437\u0430\u043A\u0440\u044B\u0432\u0430\u044E\u0449\u0438\u0435\u0441\u044F \u0442\u0435\u0433\u0438 (<div></div> \u0438 <div /> \u0434\u0435\u043B\u0430\u044E\u0442 \u043E\u0434\u043D\u043E \u0438 \u0442\u043E \u0436\u0435)' },
-                '\n        class Example extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <div></div>\n                        <div />\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Example />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nclass Example extends React.Component {\n    render() {\n        return (\n            <div>\n                <div></div>\n                <div />\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Example />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u0442\u0438\u043B\u0438 (\u043E\u043D\u0438 \u043E\u0431\u044B\u0447\u043D\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442\u0441\u044F, \u0435\u0441\u043B\u0438 \u0432\u0430\u043C \u043D\u0443\u0436\u043D\u043E \u043C\u0435\u043D\u044F\u0442\u044C \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B (\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440 \u0443 \u0432\u0430\u0441 \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u0448\u0438\u0440\u0438\u043D\u0430))' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Example1 extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <div\n                            style={{\n                                background: \'red\',\n                                width: 100,\n                                height: 100,\n                                borderRadius: \'50%\',\n                            }}\n                        ></div>\n                        <h1 style={{ fontSize: 32, color: \'green\' }}>\u041A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A</h1>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Example1 />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Example1 extends React.Component {\n    render() {\n        return (\n            <div>\n                <div\n                    style={{\n                        background: \'red\',\n                        width: 100,\n                        height: 100,\n                        borderRadius: \'50%\',\n                    }}\n                ></div>\n                <h1 style={{ fontSize: 32, color: \'green\' }}>\u041A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A</h1>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Example1 />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u0442\u0438\u043B\u0438 \u0447\u0435\u0440\u0435\u0437 css (\u0443 \u0432\u0430\u0441 \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u0444\u0430\u0439\u043B\u0438\u043A Example.css \u0440\u044F\u0434\u043E\u043C)' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        import \'./Example.css\';\n        \n        class Example1 extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <div className="redCircle"></div>\n                        <h1 className="prettyTitle">\u041A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A</h1>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Example1 />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\nimport \'./Example.css\';\n\nclass Example1 extends React.Component {\n    render() {\n        return (\n            <div>\n                <div className="redCircle"></div>\n                <h1 className="prettyTitle">\u041A\u0440\u0430\u0441\u0438\u0432\u044B\u0439 \u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A</h1>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Example1 />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: 'Example.css' },
-                '\n        .circle {\n            display: block;\n            width: 100px;\n            height: 100px;\n            background: red;\n            border-radius: 50%;\n        }\n        \n        .prettyTitle {\n            color: green;\n            font-size: 16px;\n        }\n                '
+                '\n.circle {\n    display: block;\n    width: 100px;\n    height: 100px;\n    background: red;\n    border-radius: 50%;\n}\n\n.prettyTitle {\n    color: green;\n    font-size: 16px;\n}\n                '
             )
         ),
         React.createElement(
@@ -40655,71 +40665,71 @@ var Lesson2 = exports.Lesson2 = function Lesson2() {
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u041F\u0435\u0440\u0435\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u044B (\u043D\u0430\u0440\u0438\u0441\u043E\u0432\u0430\u043B\u0438 \u0442\u0440\u0435\u0445 \u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u044B\u0445 \u043A\u043E\u0442\u043E\u0432)' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Cat extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <h2>\u0418\u043C\u044F: \u041F\u0443\u0448\u043E\u043A</h2>\n                        <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                        <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n                    </div>\n                );\n            }\n        }\n        \n        class Cats extends React.Component {\n            render() {\n                return (\n                    <div>\n                        ',
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Cat extends React.Component {\n    render() {\n        return (\n            <div>\n                <h2>\u0418\u043C\u044F: \u041F\u0443\u0448\u043E\u043A</h2>\n                <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n            </div>\n        );\n    }\n}\n\nclass Cats extends React.Component {\n    render() {\n        return (\n            <div>\n                ',
                 React.createElement(
                     'b',
                     null,
                     '<Cat />'
                 ),
-                '\n                        ',
+                '\n                ',
                 React.createElement(
                     'b',
                     null,
                     '<Cat />'
                 ),
-                '\n                        ',
+                '\n                ',
                 React.createElement(
                     'b',
                     null,
                     '<Cat />'
                 ),
-                '\n                        ',
+                '\n                ',
                 React.createElement(
                     'b',
                     null,
                     '<Cat />'
                 ),
-                '\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Cats />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Cats />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0412\u043E\u0442 \u0442\u0430\u043A \u043C\u043E\u0436\u043D\u043E \u0434\u0430\u0442\u044C \u043A\u043E\u0442\u0430\u043C \u0440\u0430\u0437\u043D\u044B\u0435 \u0438\u043C\u0435\u043D\u0430 (\u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u043E\u0432)' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Cat extends React.Component {\n            render() {\n                ',
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Cat extends React.Component {\n    render() {\n        ',
                 React.createElement(
                     'b',
                     null,
                     'const name = this.props.name;'
                 ),
-                '\n        \n                return (\n                    <div>\n                        <h2>\u0418\u043C\u044F: {name}</h2>\n                        <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                        <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n                    </div>\n                );\n            }\n        }\n        \n        class Cats extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <Cat ',
+                '\n\n        return (\n            <div>\n                <h2>\u0418\u043C\u044F: {name}</h2>\n                <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n            </div>\n        );\n    }\n}\n\nclass Cats extends React.Component {\n    render() {\n        return (\n            <div>\n                <Cat ',
                 React.createElement(
                     'b',
                     null,
                     'name="Пушок"'
                 ),
-                '></Cat>\n                        <Cat ',
+                '></Cat>\n                <Cat ',
                 React.createElement(
                     'b',
                     null,
                     'name="Снежок"'
                 ),
-                '></Cat>\n                        <Cat ',
+                '></Cat>\n                <Cat ',
                 React.createElement(
                     'b',
                     null,
                     'name="Васька"'
                 ),
-                '></Cat>\n                        <Cat ',
+                '></Cat>\n                <Cat ',
                 React.createElement(
                     'b',
                     null,
                     'name="Кот"'
                 ),
-                '></Cat>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Cats />,\n            document.getElementById(\'root\')\n        );\n                '
+                '></Cat>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Cats />,\n    document.getElementById(\'root\')\n);\n                '
             ),
             React.createElement(
                 _LayoutComponents.CodeExample,
                 { title: '\u0414\u043E\u0434\u0435\u043B\u044B\u0432\u0430\u0435\u043C \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430 \u043A\u043E\u0442\u043E\u0432' },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class Cat extends React.Component {\n            render() {\n                const name = this.props.name;\n                const color = this.props.color;\n        \n                return (\n                    <div>\n                        <h2>\u0418\u043C\u044F: {name}</h2>\n                        <p>\u0426\u0432\u0435\u0442: {color}</p>\n                        <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n                    </div>\n                );\n            }\n        }\n        \n        class Cats extends React.Component {\n            render() {\n                return (\n                    <div>\n                        <Cat\n                            name="\u041F\u0443\u0448\u043E\u043A"\n                            color="\u0420\u044B\u0436\u044B\u0439"\n                            hobby="\u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E"\n                        >\n                        </Cat>\n                        <Cat\n                            name="\u0421\u043D\u0435\u0436\u043E\u043A"\n                            color="\u0427\u0435\u0440\u043D\u044B\u0439"\n                            hobby="\u0413\u0440\u044B\u0437\u0442\u044C \u043E\u0431\u043E\u0438"\n                        >\n                        </Cat>\n                        <Cat\n                            name="\u0412\u0430\u0441\u044C\u043A\u0430"\n                            color="\u0411\u0435\u043B\u044B\u0439"\n                            hobby="\u0412\u0440\u0435\u0437\u0430\u0442\u044C\u0441\u044F \u0432 \u0441\u0442\u0435\u043D\u044B"\n                        >\n                        </Cat>\n                        <Cat\n                            name="\u041A\u043E\u0442"\n                            color="\u0421\u0435\u0440\u044B\u0439"\n                            hobby="\u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E"\n                        >\n                        </Cat>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <Cats />,\n            document.getElementById(\'root\')\n        );\n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Cat extends React.Component {\n    render() {\n        const name = this.props.name;\n        const color = this.props.color;\n\n        return (\n            <div>\n                <h2>\u0418\u043C\u044F: {name}</h2>\n                <p>\u0426\u0432\u0435\u0442: {color}</p>\n                <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n            </div>\n        );\n    }\n}\n\nclass Cats extends React.Component {\n    render() {\n        return (\n            <div>\n                <Cat\n                    name="\u041F\u0443\u0448\u043E\u043A"\n                    color="\u0420\u044B\u0436\u044B\u0439"\n                    hobby="\u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E"\n                >\n                </Cat>\n                <Cat\n                    name="\u0421\u043D\u0435\u0436\u043E\u043A"\n                    color="\u0427\u0435\u0440\u043D\u044B\u0439"\n                    hobby="\u0413\u0440\u044B\u0437\u0442\u044C \u043E\u0431\u043E\u0438"\n                >\n                </Cat>\n                <Cat\n                    name="\u0412\u0430\u0441\u044C\u043A\u0430"\n                    color="\u0411\u0435\u043B\u044B\u0439"\n                    hobby="\u0412\u0440\u0435\u0437\u0430\u0442\u044C\u0441\u044F \u0432 \u0441\u0442\u0435\u043D\u044B"\n                >\n                </Cat>\n                <Cat\n                    name="\u041A\u043E\u0442"\n                    color="\u0421\u0435\u0440\u044B\u0439"\n                    hobby="\u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E"\n                >\n                </Cat>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Cats />,\n    document.getElementById(\'root\')\n);\n                '
             )
         ),
         React.createElement(_LayoutComponents.Links, {
@@ -40749,11 +40759,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Lesson3 = undefined;
 
-var _react = __webpack_require__(33);
+var _react = __webpack_require__(30);
 
 var React = _interopRequireWildcard(_react);
 
-var _LayoutComponents = __webpack_require__(69);
+var _LayoutComponents = __webpack_require__(55);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -40772,7 +40782,41 @@ var Lesson3 = exports.Lesson3 = function Lesson3() {
                 {
                     title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u0432\u044B\u043F\u0430\u0434\u0430\u044E\u0449\u0435\u0433\u043E \u0442\u0435\u043A\u0441\u0442\u0430: \u0441\u043D\u0430\u0447\u0430\u043B\u0430 \u0442\u0435\u043A\u0441\u0442\u0430 \u043D\u0435\u0442, \u0430 \u043D\u0430\u0436\u0438\u043C\u0430\u0435\u043C \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0443 \u0438 \u043E\u043D \u0435\u0441\u0442\u044C'
                 },
-                '\n        import * as React from \'react\';\n        import ReactDOM from \'react-dom\';\n        \n        class SmartText extends React.Component {\n            state = { open: false }\n        \n            handleOpen = () => {\n                this.setState({ open: !this.state.open });\n            }\n        \n            render() {\n                const open = this.state.open;\n        \n                return (\n                    <div>\n                        {open && <div>\u041A\u0430\u043A\u043E\u0439-\u0442\u043E \u0434\u043B\u0438\u043D\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442</div>}\n                        <button onClick={this.handleOpen}>Click</button>\n                    </div>\n                );\n            }\n        }\n        \n        ReactDOM.render(\n            <SmartText />,\n            document.getElementById(\'root\')\n        );                \n                '
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass SmartText extends React.Component {\n    state = { open: false }\n\n    handleOpen = () => {\n        this.setState({ open: !this.state.open });\n    }\n\n    render() {\n        const open = this.state.open;\n\n        return (\n            <div>\n                {open && <div>\u041A\u0430\u043A\u043E\u0439-\u0442\u043E \u0434\u043B\u0438\u043D\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442</div>}\n                <button onClick={this.handleOpen}>Click</button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <SmartText />,\n    document.getElementById(\'root\')\n);                \n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                {
+                    title: '\u041F\u0440\u0438\u043C\u0435\u0440 \u043A\u043D\u043E\u043F\u043E\u0447\u043A\u0438, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0441\u0447\u0438\u0442\u0430\u0435\u0442, \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0440\u0430\u0437 \u0442\u044B \u043F\u043E\u043A\u043B\u0438\u043A\u0430\u043B'
+                },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Clicker extends React.Component {\n    state = { cliks: 0 }\n\n    handleClicks = () => {\n        const prevClicks = this.state.clicks;\n\n        this.setState({ clicks: prevClicks + 1 });\n    }\n\n    render() {\n        const clicks = this.state.clicks;\n\n        return (\n            <div>\n                <button onClick={this.handleClicks}>\n                    You clicked: {clicks} times\n                </button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Clicker />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                {
+                    title: '\u0420\u0438\u0441\u0443\u0435\u043C \u043A\u0440\u0430\u0441\u043D\u044B\u0439 \u043A\u0440\u0443\u0436\u043E\u043A, \u043E\u0434\u043D\u0430 \u043A\u043D\u043E\u043F\u043E\u0447\u043A\u0430 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442 \u0435\u0433\u043E \u0440\u0430\u0437\u043C\u0435\u0440, \u0432\u0442\u043E\u0440\u0430\u044F \u0434\u0432\u0438\u0433\u0430\u0435\u0442 \u0432\u043F\u0440\u0430\u0432\u043E'
+                },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Circle extends React.Component {\n    state = { size: 0, margin: 0 }\n\n    handleSizeChange = () => {\n        const prevSize = this.state.size;\n\n        this.setState({ size: prevSize + 1 });\n    }\n\n    handleMarginChange = () => {\n        const prevMargin = this.state.margin;\n\n        this.setState({ margin: prevMargin + 1 });\n    }\n\n    render() {\n        const size = this.state.size;\n        const margin = this.state.margin;\n\n        return (\n            <div>\n                <div\n                    style={{\n                        width: size * 10,\n                        height: size * 10,\n                        background: \'red\',\n                        borderRadius: \'50%\',\n                        marginLeft: margin * 10,\n                    }}\n                />\n                <button onClick={this.handleSizeChange}>\n                    Increase size\n                </button>\n                <button onClick={this.handleMarginChange}>\n                    Increase margin\n                </button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Circle />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u041A\u0430\u043A \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442 \u0432 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0439 \u0444\u0430\u0439\u043B, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440 Cat.jsx' },
+                '\nimport * as React from \'react\';\n\nexport class Cat extends React.Component {\n    render() {\n        return (\n            <div>\n                <h2>\u0418\u043C\u044F: \u041F\u0443\u0448\u043E\u043A</h2>\n                <p>\u0426\u0432\u0435\u0442: \u0420\u044B\u0436\u0438\u0439</p>\n                <p>\u0425\u043E\u0431\u0431\u0438: \u0415\u0441\u0442\u044C \u0437\u0435\u043C\u043B\u044E</p>\n            </div>\n        );\n    }\n}\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0418\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u0443\u0435\u043C \'\u041A\u043E\u0442\u0430\'' },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nimport { Cat } from \'./Cat\';\n\nReactDOM.render(\n    <Cat />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0420\u0438\u0441\u0443\u0435\u043C \u0441\u043F\u0438\u0441\u043E\u043A \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432' },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nconst students = [\'\u0412\u0430\u0441\u044F\', \'\u041F\u0435\u0442\u044F\', \'\u0410\u043A\u0440\u0430\u0434\u0438\u0439\', \'\u041C\u0430\u0448\u0430\'];\n\nclass Students extends React.Component {\n    render() {\n        return (\n            <div>\n                {students.map(student => (\n                    <h2>{student}</h2>\n                ))}\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Students />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0420\u0438\u0441\u0443\u0435\u043C \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432 \u043F\u043E\u0441\u043B\u043E\u0436\u043D\u0435\u0435 (\u0441 \u0438\u043C\u0435\u043D\u0435\u043C \u0438 \u0444\u0430\u043C\u0438\u043B\u0438\u0435\u0439)' },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nconst students = [\n    { firstName: \'\u0412\u0430\u0441\u044F\', lastName: \'\u041F\u0435\u0442\u0440\u043E\u0432\' },\n    { firstName: \'\u041F\u0435\u0442\u044F\', lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' },\n    { firstName: \'\u0410\u0440\u043A\u0430\u0434\u0438\u0439\', lastName: \'\u041B\u0435\u043F\u0441\' }\n];\n\nclass Students extends React.Component {\n    render() {\n        return (\n            <div>\n                {students.map(student => (\n                    <div>\n                        <h2>{student.firstName}</h2>\n                        <h2>{student.lastName}</h2>\n                    </div>\n                ))}\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Students />,\n    document.getElementById(\'root\')\n);\n                '
             )
         ),
         React.createElement(_LayoutComponents.Links, {
@@ -40797,10 +40841,67 @@ var Lesson3 = exports.Lesson3 = function Lesson3() {
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Lesson4 = undefined;
+
+var _react = __webpack_require__(30);
+
+var React = _interopRequireWildcard(_react);
+
+var _LayoutComponents = __webpack_require__(55);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var Lesson4 = exports.Lesson4 = function Lesson4() {
+    return React.createElement(
+        _LayoutComponents.Section,
+        { title: '\u0417\u0430\u043D\u044F\u0442\u0438\u0435 4. \u0420\u0430\u0431\u043E\u0442\u0430\u0435\u043C \u0441 \u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F\u043C\u0438 \u0432 React' },
+        React.createElement(_LayoutComponents.BasicConcepts, {
+            items: ['Как сделать динамический список в React (список фильмов, котов и т.д)', 'Как добавлять новые сущности в список', 'Как удалять из списка']
+        }),
+        React.createElement(
+            _LayoutComponents.LongDescription,
+            { title: '\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0430 React, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043C\u044B \u0440\u0430\u0437\u0431\u0438\u0440\u0430\u043B\u0438' },
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                {
+                    title: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u043D\u043E\u0432\u044B\u0445 \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432',
+                    description: '\u0414\u043B\u044F \u044D\u0442\u043E\u0433\u043E \u043D\u0443\u0436\u043D\u043E \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u044C \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432 \u0432 state'
+                },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Students extends React.Component {\n    state = {\n        students: [\'\u041F\u0435\u0442\u044F1\', \'\u041F\u0435\u0442\u044F2\', \'\u041F\u0435\u0442\u044F3\'],\n    }\n\n    handleAddStudent = () => {\n        const newStudents = [...this.state.students]; // \u043A\u043E\u043F\u0438\u0440\u0443\u0435\u043C \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432\n\n        newStudents.push(\'\u041F\u0435\u0442\u044F\' + newStudents.length);\n\n        this.setState({ students: newStudents });\n    }\n\n    render() {\n        return (\n            <div>\n                {this.state.students.map(student => (\n                    <div>\n                        <h2>{student}</h2>\n                    </div>\n                ))}\n                <button onClick={this.handleAddStudent}>\n                    Add student\n                </button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Students />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432 \'\u043F\u043E\u0441\u043B\u043E\u0436\u043D\u0435\u0435\'' },
+                '\nclass Students extends React.Component {\n    state = {\n        students: [\n            { firstName: \'\u0412\u0430\u0441\u044F\', lastName: \'\u041F\u0435\u0442\u0440\u043E\u0432\' },\n            { firstName: \'\u041F\u0435\u0442\u044F\', lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' },\n            { firstName: \'\u0410\u0440\u043A\u0430\u0434\u0438\u0439\', lastName: \'\u041B\u0435\u043F\u0441\' }\n        ]\n    }\n\n    handleAddStudent = () => {\n        const newStudents = [...this.state.students];\n        const newStudent = {\n            firstName: \'\u041F\u0435\u0442\u044F\' + newStudents.length,\n            lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' + newStudents.length,\n        };\n        newStudents.push(newStudent);\n\n        this.setState({ students: newStudents });\n    }\n\n    render() {\n        return (\n            <div>\n                {this.state.students.map(student => (\n                    <div>\n                        <h2>{student.firstName}</h2>\n                        <h2>{student.lastName}</h2>\n                    </div>\n                ))}\n                <button onClick={this.handleAddStudent}>\n                    Add student\n                </button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Students />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0422\u043E\u0436\u0435 \u0441\u0430\u043C\u043E\u0435, \u043D\u043E \u0434\u043B\u044F \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u043E\u0432 \u0437\u0430\u0432\u0435\u0434\u0435\u043C \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442' },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Student extends React.Component {\n    render() {\n        const firstName = this.props.firstName;\n        const lastName = this.props.lastName;\n\n        return (\n            <div>\n                <h2>{firstName}</h2>\n                <h2>{lastName}</h2>\n            </div>\n        );\n    }\n}\n\nclass Students extends React.Component {\n    state = {\n        students: [\n            { firstName: \'\u0412\u0430\u0441\u044F\', lastName: \'\u041F\u0435\u0442\u0440\u043E\u0432\' },\n            { firstName: \'\u041F\u0435\u0442\u044F\', lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' },\n            { firstName: \'\u0410\u0440\u043A\u0430\u0434\u0438\u0439\', lastName: \'\u041B\u0435\u043F\u0441\' }\n        ]\n    }\n\n    handleAddStudent = () => {\n        const newStudents = [...this.state.students];\n        const newStudent = {\n            firstName: \'\u041F\u0435\u0442\u044F\' + newStudents.length,\n            lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' + newStudents.length,\n        };\n        newStudents.push(newStudent);\n\n        this.setState({ students: newStudents });\n    }\n\n    render() {\n        return (\n            <div>\n                {this.state.students.map(student => (\n                    <Student\n                        firstName={student.firstName}\n                        lastName={student.lastName}\n                    />\n                ))}\n                <button onClick={this.handleAddStudent}>\n                    Add student\n                </button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Students />,\n    document.getElementById(\'root\')\n);\n                '
+            ),
+            React.createElement(
+                _LayoutComponents.CodeExample,
+                { title: '\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u0430' },
+                '\nimport * as React from \'react\';\nimport ReactDOM from \'react-dom\';\n\nclass Students extends React.Component {\n    state = {\n        students: [\n            { firstName: \'\u0412\u0430\u0441\u044F\', lastName: \'\u041F\u0435\u0442\u0440\u043E\u0432\' },\n            { firstName: \'\u041F\u0435\u0442\u044F\', lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' },\n            { firstName: \'\u0410\u0440\u043A\u0430\u0434\u0438\u0439\', lastName: \'\u041B\u0435\u043F\u0441\' }\n        ]\n    }\n\n    handleAddStudent = () => {\n        const newStudents = [...this.state.students];\n        const newStudent = {\n            firstName: \'\u041F\u0435\u0442\u044F\' + newStudents.length,\n            lastName: \'\u0418\u0432\u0430\u043D\u043E\u0432\' + newStudents.length,\n        };\n        newStudents.push(newStudent);\n\n        this.setState({ students: newStudents });\n    }\n\n    handleDeleteStudent = (index) => {\n        const students = this.state.students;\n        const newStudents = [];\n\n        for (let i = 0; i < students.length; i++) {\n            if (i != index) {\n                newStudents.push(students[i]);\n            }\n        }\n\n        this.setState({ students: newStudents });\n    }\n\n    render() {\n        return (\n            <div>\n                {this.state.students.map((student, index) => (\n                    <div>\n                        <h2>{student.firstName}</h2>\n                        <button onClick={() => this.handleDeleteStudent(index)}>\n                            \u0423\u0434\u0430\u043B\u0438\u0442\u044C\n                        </button>\n                        <h2>{student.lastName}</h2>\n                    </div>\n                ))}\n                <button onClick={this.handleAddStudent}>\n                    Add student\n                </button>\n            </div>\n        );\n    }\n}\n\nReactDOM.render(\n    <Students />,\n    document.getElementById(\'root\')\n);\n                '
+            )
+        )
+    );
+};
+
+/***/ }),
+/* 370 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(370);
+var content = __webpack_require__(371);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -40825,7 +40926,7 @@ if(false) {
 }
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(99)(false);
@@ -40842,13 +40943,13 @@ exports.locals = {
 };
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(372);
+var content = __webpack_require__(373);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -40873,7 +40974,7 @@ if(false) {
 }
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(99)(false);
