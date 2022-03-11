@@ -1,0 +1,21 @@
+{
+  "description": "Mock server for Pragel clients and Liberty Open API.",
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "json-server": "^0.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.5",
+    "uuid": "^8.3.2",
+    "ws": "^7.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
