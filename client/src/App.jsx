@@ -3,7 +3,16 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    fetch('/api/cat').then(data => data.json()).then(data => console.log(data));
+    fetch('/api/cats').then(data => data.json()).then(data => console.log(data));
+
+    fetch('/api/cat', {
+      body: JSON.stringify({ cat: 'moo' }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+    })
   }
 
   render(){

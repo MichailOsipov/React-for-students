@@ -1,22 +1,25 @@
-const http = require('http');
-const jsonServer = require('json-server');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const PORT = Number(process.env.PORT) || 2999;
 
-const app = jsonServer.create();
-const server = http.createServer(app);
+const app = express();
+app.use(bodyParser.json());
 
+const cats = [];
 
-const router = express.Router();
-
-router.get('/cat', (request, response) => {
-  return response.status(200).json({ cat: 'meow' });
+app.get('/api/cats', (req, res) => {
+  return res.status(200).json({ cats: cats });
 });
 
-app.use('/api', router);
-// app.use(jsonRouter);
+app.post('/api/cat', (req, res) => {
+  const cat = req.body.cat;
 
-server.listen(PORT, () => {
+  cats.push(cat);
+
+  return res.sendStatus(200);
+});
+
+app.listen(PORT, () => {
   console.info('JSON Server is running on port:', PORT);
 });
