@@ -26,16 +26,18 @@ export class LongDescription extends React.Component {
         const description = this.props.description;
 
         return (
-            <div>
-                <h3>{title}</h3>
-                <div>
-                    {description}
-                </div>
+            <div className={styles.longDescription}>
+                {title && <h3 className={styles.longDescriptionTitle}>{title}</h3>}
+                {description && (
+                    <div className={styles.longDescriptionDescription}>
+                        {description}
+                    </div>
+                )}
                 <button type="button" onClick={this.onToggleOpen}>
                     {this.state.open ? 'Скрыть' : 'Подробнее'}
                 </button>
                 {this.state.open && (
-                    <div>
+                    <div className={styles.longDescriptionContent}>
                         {this.props.children}
                     </div>
                 )}
@@ -46,7 +48,7 @@ export class LongDescription extends React.Component {
 
 LongDescription.propTypes = {
     title: PropTypes.string,
-    description: PropTypes.string
+    description: PropTypes.element
 };
 
 export const BasicConcepts = ({ items }) => (
@@ -54,7 +56,7 @@ export const BasicConcepts = ({ items }) => (
         <h3 className={styles.basicConceptsTitle}>Основные понятия:</h3>
         <ul>
             {items.map(item => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
             ))}
         </ul>
     </div>
@@ -69,7 +71,7 @@ export const Links = ({ links }) => (
         <h3 className={styles.linksTitle}>Полезные ссылки:</h3>
         <ul>
             {links.map(link => (
-                <li>
+                <li key={link.url}>
                     <span className={styles.linkText}>{link.text}:</span>
                     <a
                         href={link.url}
@@ -93,9 +95,9 @@ Links.propTypes = {
 };
 
 export const CodeExample = ({ title, description, children }) => (
-    <div>
-        <h4>{title}</h4>
-        <p>{description}</p>
+    <div className={styles.codeExample}>
+        {title && <h4 className={styles.codeExampleTitle}>{title}</h4>}
+        {description && <p className={styles.codeExampleDescription}>{description}</p>}
         <pre className={styles.codeBox}>
             {children}
         </pre>

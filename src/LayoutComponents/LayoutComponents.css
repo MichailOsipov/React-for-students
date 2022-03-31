@@ -24,6 +24,34 @@
     margin-right: 10px;
 }
 
+.longDescription:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.longDescriptionTitle {
+    margin-bottom: 15px;
+}
+
+.longDescriptionDescription {
+    margin-bottom: 15px;
+}
+
+.longDescriptionContent {
+    margin-top: 10px;
+}
+
+.codeExample:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.codeExampleTitle {
+    margin-bottom: 10px;
+}
+
+.codeExampleDescription {
+    margin-bottom: 10px;
+}
+
 .codeBox {
     border: 2px solid #4358a8;
     border-radius: 4px;

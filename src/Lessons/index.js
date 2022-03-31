@@ -10,3 +10,12 @@ export {
 export {
     Lesson4
 } from './Lesson4';
+export {
+    Lesson5
+} from './Lesson5';
+export {
+    Lesson6
+} from './Lesson6';
+export {
+    Lesson7
+} from './Lesson7';
