@@ -41183,7 +41183,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var Lesson7 = exports.Lesson7 = function Lesson7() {
     return React.createElement(
         _LayoutComponents.Section,
-        { title: '\u0417\u0430\u043D\u044F\u0442\u0438\u0435 6. React hooks - \u0430\u043B\u044C\u0442\u0435\u0440\u043D\u0430\u0442\u0438\u0432\u0430 React-\u043A\u043B\u0430\u0441\u0441\u0430\u043C' },
+        { title: '\u0417\u0430\u043D\u044F\u0442\u0438\u0435 7. React hooks - \u0430\u043B\u044C\u0442\u0435\u0440\u043D\u0430\u0442\u0438\u0432\u0430 React-\u043A\u043B\u0430\u0441\u0441\u0430\u043C' },
         React.createElement(
             'h3',
             null,
