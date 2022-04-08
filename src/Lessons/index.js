@@ -19,3 +19,6 @@ export {
 export {
     Lesson7
 } from './Lesson7';
+export {
+    Lesson8
+} from './Lesson8';

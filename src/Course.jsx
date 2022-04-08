@@ -11,7 +11,8 @@ import {
     Lesson4,
     Lesson5,
     Lesson6,
-    Lesson7
+    Lesson7,
+    Lesson8
 } from './Lessons';
 
 import {
@@ -70,6 +71,7 @@ export const Course = () => (
                 <img src={example2DataURL} alt="example2" />
             </LongDescription>
         </Section>
+        <Lesson8 />
         <Section title="Посещения занятий и баллы:">
             <a
                 target="_blank"
