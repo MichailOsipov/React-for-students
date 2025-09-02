@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import { MainCourse } from './main-course';
+import { MainCourse } from './main-page';
 
 ReactDOM.render(
     <MainCourse />,
