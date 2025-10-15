@@ -23,8 +23,9 @@ export const Lesson2 = () => (
         <LongDescription
             title="Примеры на React, которые мы разбирали (Верстка)"
         >
-            <CodeExample title="Самый простой пример, базовая верстка">
-                {`
+            <CodeExample
+                title="Самый простой пример, базовая верстка"
+                codeMain={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -33,9 +34,11 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Рисуем что-то в отдельном компоненте">
-                {`
+            />
+            <CodeExample
+                title="Рисуем что-то в отдельном компоненте"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -52,9 +55,26 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Рисуем верстку посложнее">
-                {`
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const HelloWorld = () => {
+    return (
+        <div>Hello world!</div>
+    );
+};
+
+ReactDOM.render(
+    <HelloWorld />,
+    document.getElementById('root')
+);
+                `}
+            />
+            <CodeExample
+                title="Рисуем верстку посложнее"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -75,9 +95,30 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Самозакрывающиеся теги (<div></div> и <div /> делают одно и то же)">
-                {`
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const Example1 = () => {
+    return (
+        <div>
+            <h1>Hello</h1>
+            <span>some text here</span>
+            <button>Click!</button>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Example1 />,
+    document.getElementById('root')
+);                
+                `}
+            />
+            <CodeExample
+                title="Самозакрывающиеся теги (<div></div> и <div /> делают одно и то же)"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 class Example extends React.Component {
     render() {
         return (
@@ -94,9 +135,26 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Добавляем стили (они обычно используются, если вам нужно менять параметры (например у вас динамическая ширина))">
-                {`
+                codeMain={`
+const Example = () => {
+    return (
+        <div>
+            <div></div>
+            <div />
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Example />,
+    document.getElementById('root')
+);                
+                    `}
+            />
+            <CodeExample
+                title="Добавляем стили (они обычно используются, если вам нужно менять параметры (например у вас динамическая ширина))"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -123,9 +181,36 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Добавляем стили через css (у вас должен быть файлик Example.css рядом)">
-                {`
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const Example1 = () => {
+    return (
+        <div>
+            <div
+                style={{
+                    background: 'red',
+                    width: 100,
+                    height: 100,
+                    borderRadius: '50%',
+                }}
+            ></div>
+            <h1 style={{ fontSize: 32, color: 'green' }}>Красивый заголовок</h1>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Example1 />,
+    document.getElementById('root')
+);                
+                    `}
+            />
+            <CodeExample
+                title="Добавляем стили через css (у вас должен быть файлик Example.css рядом)"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import './Example.css';
@@ -146,9 +231,29 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Example.css">
-                {`
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import './Example.css';
+
+const Example1 = () => {
+    return (
+        <div>
+            <div className="redCircle"></div>
+            <h1 className="prettyTitle">Красивый заголовок</h1>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Example1 />,
+    document.getElementById('root')
+);
+                `}
+            />
+            <CodeExample
+                title="Example.css"
+                codeMain={`
 .circle {
     display: block;
     width: 100px;
@@ -162,11 +267,13 @@ ReactDOM.render(
     font-size: 16px;
 }
                 `}
-            </CodeExample>
+            />
         </LongDescription>
         <LongDescription title="Примеры на React (посложнее)">
-            <CodeExample title="Переиспользуем компоненты (нарисовали трех одинаковых котов)">
-                {`
+            <CodeExample
+                title="Переиспользуем компоненты (нарисовали трех одинаковых котов)"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -186,10 +293,10 @@ class Cats extends React.Component {
     render() {
         return (
             <div>
-                `}<b>{'<Cat />'}</b>{`
-                `}<b>{'<Cat />'}</b>{`
-                `}<b>{'<Cat />'}</b>{`
-                `}<b>{'<Cat />'}</b>{`
+                <Cat />
+                <Cat />
+                <Cat />
+                <Cat />
             </div>
         );
     }
@@ -200,15 +307,47 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Вот так можно дать котам разные имена (параметры компонентов)">
-                {`
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const Cat = () => {
+    return (
+        <div>
+            <h2>Имя: Пушок</h2>
+            <p>Цвет: Рыжий</p>
+            <p>Хобби: Есть землю</p>
+        </div>
+    );
+};
+
+const Cats = () => {
+    return (
+        <div>
+            <Cat />
+            <Cat />
+            <Cat />
+            <Cat />
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Cats />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Вот так можно дать котам разные имена (параметры компонентов)"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
 class Cat extends React.Component {
     render() {
-        `}<b>const name = this.props.name;</b>{`
+        const name = this.props.name;
 
         return (
             <div>
@@ -224,10 +363,10 @@ class Cats extends React.Component {
     render() {
         return (
             <div>
-                <Cat `}<b>{'name="Пушок"'}</b>{`></Cat>
-                <Cat `}<b>{'name="Снежок"'}</b>{`></Cat>
-                <Cat `}<b>{'name="Васька"'}</b>{`></Cat>
-                <Cat `}<b>{'name="Кот"'}</b>{`></Cat>
+                <Cat name="Пушок"></Cat>
+                <Cat name="Снежок"></Cat>
+                <Cat name="Васька"></Cat>
+                <Cat name="Кот"></Cat>
             </div>
         );
     }
@@ -238,9 +377,41 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Доделываем остальные свойства котов">
-                {`
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const Cat = ({ name }) => {
+    return (
+        <div>
+            <h2>Имя: {name}</h2>
+            <p>Цвет: Рыжий</p>
+            <p>Хобби: Есть землю</p>
+        </div>
+    );
+};
+
+const Cats = () => {
+    return (
+        <div>
+            <Cat name="Пушок"></Cat>
+            <Cat name="Снежок"></Cat>
+            <Cat name="Васька"></Cat>
+            <Cat name="Кот"></Cat>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Cats />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Доделываем остальные свойства котов"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -297,7 +468,57 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const Cat = ({ name, color }) => {
+    return (
+        <div>
+            <h2>Имя: {name}</h2>
+            <p>Цвет: {color}</p>
+            <p>Хобби: Есть землю</p>
+        </div>
+    );
+};
+
+const Cats = () => {
+    return (
+        <div>
+            <Cat
+                name="Пушок"
+                color="Рыжый"
+                hobby="Есть землю"
+            >
+            </Cat>
+            <Cat
+                name="Снежок"
+                color="Черный"
+                hobby="Грызть обои"
+            >
+            </Cat>
+            <Cat
+                name="Васька"
+                color="Белый"
+                hobby="Врезаться в стены"
+            >
+            </Cat>
+            <Cat
+                name="Кот"
+                color="Серый"
+                hobby="Есть землю"
+            >
+            </Cat>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Cats />,
+    document.getElementById('root')
+);                    
+                    `}
+            />
         </LongDescription>
         <Links
             links={[

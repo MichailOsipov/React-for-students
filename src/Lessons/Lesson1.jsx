@@ -30,8 +30,9 @@ export const Lesson1 = () => (
                 </span>
             )}
         >
-            <CodeExample title="Пример файла верстки index.html">
-                {`
+            <CodeExample
+                title="Пример файла верстки index.html"
+                codeMain={`
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,9 +47,10 @@ export const Lesson1 = () => (
     </body>
 </html>
                 `}
-            </CodeExample>
-            <CodeExample title="Пример файла стилей styles.css">
-                {`
+            />
+            <CodeExample
+                title="Пример файла стилей styles.css"
+                codeMain={`
 h1 {
     color: red;
     font-size: 35px;
@@ -60,27 +62,29 @@ h1 {
     background: red;
 }
                 `}
-            </CodeExample>
-            <CodeExample title="Пример файла скриптов main.js">
-                {`
+            />
+            <CodeExample
+                title="Пример файла скриптов main.js"
+                codeMain={`
 const button = document.getElementById('button');
 
 button.AddEventListenter('click', () => {
     alert('Hello from JS');
 });
                 `}
-            </CodeExample>
+            />
         </LongDescription>
         <LongDescription title="Пишем первые скрипты на JS (в html должен быть <div id='button'></div>)">
-            <CodeExample title="Пример файла скриптов main.js">
-                {`
+            <CodeExample
+                title="Пример файла скриптов main.js"
+                codeMain={`
 const button = document.getElementById('button');
 
 button.AddEventListenter('click', () => {
     alert('Hello from JS');
 });
                 `}
-            </CodeExample>
+            />
         </LongDescription>
         <Links
             links={[

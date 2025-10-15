@@ -94,17 +94,51 @@ Links.propTypes = {
     }))
 };
 
-export const CodeExample = ({ title, description, children }) => (
-    <div className={styles.codeExample}>
-        {title && <h4 className={styles.codeExampleTitle}>{title}</h4>}
-        {description && <p className={styles.codeExampleDescription}>{description}</p>}
-        <pre className={styles.codeBox}>
-            {children}
-        </pre>
-    </div>
-);
+// eslint-disable-next-line react/no-multi-comp
+export class CodeExample extends React.Component {
+    state = { open: false };
+
+    onToggleOpen = () => {
+        this.setState({ open: !this.state.open });
+    }
+
+    render() {
+        const {
+            title,
+            description,
+            codeMain,
+            codeHidden,
+            codeHiddenButtonText = 'Подробнее'
+        } = this.props;
+
+        return (
+            <div className={styles.codeExample}>
+                {title && <h4 className={styles.codeExampleTitle}>{title}</h4>}
+                {description && <p className={styles.codeExampleDescription}>{description}</p>}
+                {codeHidden && (
+                    <button type="button" onClick={this.onToggleOpen}>
+                        {this.state.open ? 'Скрыть' : codeHiddenButtonText}
+                    </button>
+                )}
+                {codeHidden && this.state.open && (
+                    <pre className={styles.codeBox}>
+                        {codeHidden}
+                    </pre>
+                )}
+                <div>
+                    <pre className={styles.codeBox}>
+                        {codeMain}
+                    </pre>
+                </div>
+            </div>
+        );
+    }
+}
 
 CodeExample.propTypes = {
     title: PropTypes.string,
-    description: PropTypes.string
+    description: PropTypes.string,
+    codeHidden: PropTypes.string,
+    codeHiddenButtonText: PropTypes.string,
+    codeMain: PropTypes.string
 };

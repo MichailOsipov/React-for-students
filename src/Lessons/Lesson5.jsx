@@ -16,11 +16,14 @@ export const Lesson5 = () => (
             ]}
         />
         <LongDescription title="Примеры на React, которые мы разбирали">
-            <CodeExample title="Добавляем текстовый инпут">
-                {`
+            <CodeExample
+                title="Добавляем текстовый инпут"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-export class TextInput extends React.Component {
+class TextInput extends React.Component {
     state = { textValue: '' }
 
     handleChange = (event) => {
@@ -46,12 +49,43 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Добавляем поле ввода с датой">
-                {`
+                codeMain={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-export class DateInput extends React.Component {
+const TextInput = () => {
+    const [textValue, setTextValue] = React.useState('');
+
+    const handleChange = (event) => {
+        setTextValue(event.target.value);
+    };
+
+    return (
+        <div>
+            <input
+                type="text"
+                value={textValue}
+                onChange={handleChange}
+            />
+            Вы ввели значение: {textValue}
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <TextInput />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Добавляем поле ввода с датой"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+class DateInput extends React.Component {
     state = { dateValue: '' }
 
     handleChange = (event) => {
@@ -77,13 +111,46 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Добавляем чекбокс">
-                {`
+                codeMain={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-export class CheckboxInput extends React.Component {
-    state = { checkboxValue: '' }
+const DateInput = () => {
+    const [dateValue, setDateValue] = React.useState('');
+
+    const handleChange = (event) => {
+        setDateValue(event.target.value);
+    };
+
+    render() {
+        return (
+            <div>
+                <input
+                    type="date"
+                    value={dateValue}
+                    onChange={handleChange}
+                />
+                Вы ввели значение: {dateValue}
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <DateInput />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Добавляем чекбокс"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+class CheckboxInput extends React.Component {
+    state = { checkboxValue: false }
 
     handleChange = (event) => {
         this.setState({ checkboxValue: event.target.checked });
@@ -109,10 +176,42 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Пример с select">
-                {`
+                codeMain={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const  CheckboxInput = () => {
+    const [checkboxValue, setCheckboxValue] = React.useState(false);
+
+    const handleChange = (event) => {
+        setCheckboxValue(event.target.checked);
+    };
+
+    return (
+        <div>
+            <input
+                type="checkbox"
+                checked={checkboxValue}
+                onChange={handleChange}
+            />
+            {checkboxValue && <div>значение чекбокса = true</div>}
+            {!checkboxValue && <div>значение чекбокса = false</div>}
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <CheckboxInput />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Пример с select"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
 
 const cities = [
     { label: '', value: undefined },
@@ -121,7 +220,7 @@ const cities = [
     { label: 'Ижевск', value: 'Izhevsk' }
 ];
 
-export class Select extends React.Component {
+class Select extends React.Component {
     state = { selectedValue: '' }
 
     handleChange = (event) => {
@@ -158,12 +257,61 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Делаем студентов с разными именами">
-                {`
+                codeMain={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-export class Students extends React.Component {
+const cities = [
+    { label: '', value: undefined },
+    { label: 'Тверь', value: 'Tver' },
+    { label: 'Москва', value: 'Moscow' },
+    { label: 'Ижевск', value: 'Izhevsk' }
+];
+
+const Select () => {
+    const [selectedValue, setSelectedValue] = React.useState('');
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    }
+
+    return (
+        <div>
+            <select
+                onChange={handleChange}
+                value={selectedValue}
+            >
+                {cities.map(city => (
+                    <option
+                        key={city.value}
+                        value={city.value}
+                    >
+                        {city.label}
+                    </option>
+                ))}
+            </select>
+            <div>
+                Вы выбрали: {selectedValue}
+            </div>
+        </div>
+    );
+};
+
+
+ReactDOM.render(
+    <Select />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Делаем студентов с разными именами"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+class Students extends React.Component {
     state = {
         students: [{ firstname: 'Андрей', lastname: 'Тверской' }],
         firstnameValue: '',
@@ -227,12 +375,77 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Делаем студентов с отметкой нравится">
-                {`
+                codeMain={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-export class PlayGround extends React.Component {
+const Students = () => {
+    const [students, setStudents] = React.useState([{ firstname: 'Андрей', lastname: 'Тверской' }]);
+    const [firstnameValue, setFirstnameValue] = React.useState('');
+    const [lastnameValue, setLastnameValue] = React.useState('');
+
+    const handleFirstnameChange = (event) => {
+        setFirstnameValue(event.target.value);
+    };
+    
+    const handleLastnameChange = (event) => {
+        setLastnameValue(event.target.value);
+    };
+
+    const handleAdd = () => {
+        const newStudents = [...students];
+
+        newStudents.push({
+            firstname: firstnameValue,
+            lastname: lastnameValue
+        });
+
+        setStudents(newStudents);
+        setFirstnameValue('');
+        setLastnameValue('');
+    };
+
+    return (
+        <div>
+            <h2>Студенты:</h2>
+            {students.map(student => (
+                <div>
+                    <h3>{student.firstname}</h3>
+                    <h3>{student.lastname}</h3>
+                </div>
+            ))}
+            <h2>Добавить нового студента:</h2>
+            <label>Имя:</label><br />
+            <input
+                value={firstnameValue}
+                onChange={handleFirstnameChange}
+            />
+            <br />
+            <label>Фамилия:</label><br />
+            <input
+                value={lastnameValue}
+                onChange={handleLastnameChange}
+            />
+            <br />
+            <button onClick={handleAdd}>Добавить</button>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Students />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Делаем студентов с отметкой нравится"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+class Students extends React.Component {
     state = {
         students: [{ firstname: 'Андрей', lastname: 'Тверской', like: false }],
         firstnameValue: '',
@@ -297,12 +510,78 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
-            <CodeExample title="Фильтруем студентов и показываем только тех кто нравится">
-                {`
+                codeMain={`
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 
-export class PlayGround extends React.Component {
+const Students = () => {
+    const [students, setStudents] = React.useState([{ firstname: 'Андрей', lastname: 'Тверской' }]);
+    const [firstnameValue, setFirstnameValue] = React.useState('');
+    const [lastnameValue, setLastnameValue] = React.useState('');
+    const [likeValue, setLikeValue] = React.useState(false);
+
+    const handleFirstnameChange = (event) => {
+        setFirstnameValue(event.target.value);
+    };
+
+    const handleLastnameChange = (event) => {
+        setLastnameValue(event.target.value);
+    };
+
+    const handleLikeChange = (event) => {
+        setLikeValue(event.target.checked);
+    };
+
+    const handleAdd = () => {
+        const newStudents = [...students];
+
+        newStudents.push({
+            firstname: firstnameValue,
+            lastname: lastnameValue,
+            like: likeValue
+        });
+
+        setStudents(newStudents);
+        setFirstnameValue('');
+        setLastnameValue('');
+    };
+
+    return (
+        <div>
+            <h2>Студенты:</h2>
+            {students.map(student => (
+                <div>
+                    <h3>{student.firstname}</h3>
+                    <h3>{student.lastname}</h3>
+                    {student.like ? 'Нравится' : 'Не нравится'}
+                </div>
+            ))}
+            <h2>Добавить нового студента:</h2>
+            <label>Имя:</label><br />
+            <input value={firstnameValue} onChange={handleFirstnameChange} /><br />
+            <label>Фамилия:</label><br />
+            <input value={lastnameValue} onChange={handleLastnameChange} /><br />
+            <label>Мне он нравится</label>
+            <input type="checkbox" checked={likeValue} onChange={handleLikeChange} /><br />
+            <button onClick={handleAdd}>Добавить</button>
+        </div>
+    );
+}
+
+ReactDOM.render(
+    <Students />,
+    document.getElementById('root')
+);
+                    `}
+            />
+            <CodeExample
+                title="Фильтруем студентов и показываем только тех кто нравится"
+                codeHiddenButtonText="Старый код на классах"
+                codeHidden={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+class Students extends React.Component {
     state = {
         students: [{ firstname: 'Андрей', lastname: 'Тверской', like: false }],
         firstnameValue: '',
@@ -381,7 +660,85 @@ ReactDOM.render(
     document.getElementById('root')
 );
                 `}
-            </CodeExample>
+                codeMain={`
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+const Students = () => {
+    const [students, setStudents] = React.useState([{ firstname: 'Андрей', lastname: 'Тверской' }]);
+    const [firstnameValue, setFirstnameValue] = React.useState('');
+    const [lastnameValue, setLastnameValue] = React.useState('');
+    const [likeValue, setLikeValue] = React.useState(false);
+    const [filter, setFilter] = React.useState('all');
+
+    const handleFirstnameChange = (event) => {
+        setFirstnameValue(event.target.value);
+    };
+
+    const handleLastnameChange = (event) => {
+        setLastnameValue(event.target.value);
+    };
+
+    const handleLikeChange = (event) => {
+        setLikeValue(event.target.checked);
+    };
+
+    const handleAdd = () => {
+        const newStudents = [...students];
+
+        newStudents.push({
+            firstname: firstnameValue,
+            lastname: lastnameValue,
+            like: likeValue
+        });
+
+        setStudents(newStudents);
+        setFirstnameValue('');
+        setLastnameValue('');
+    };
+
+    const showLiked = () => {
+        setFilter('liked');
+    }
+
+    showAll = () => {
+        setFilter('all');
+    }
+
+    const studentsToRender = filter === 'all'
+        ? students
+        : students.filter(st => st.like);
+
+    return (
+        <div>
+            <button onClick={showLiked}>Показать кто нравится</button>
+            <button onClick={showAll}>Показать всех</button>
+            <h2>Студенты:</h2>
+            {studentsToRender.map(student => (
+                <div>
+                    <h3>{student.firstname}</h3>
+                    <h3>{student.lastname}</h3>
+                    {student.like ? 'Нравится' : 'Не нравится'}
+                </div>
+            ))}
+            <h2>Добавить нового студента:</h2>
+            <label>Имя:</label><br />
+            <input value={firstnameValue} onChange={handleFirstnameChange} /><br />
+            <label>Фамилия:</label><br />
+            <input value={lastnameValue} onChange={handleLastnameChange} /><br />
+            <label>Мне он нравится</label>
+            <input type="checkbox" checked={likeValue} onChange={handleLikeChange} /><br />
+            <button onClick={handleAdd}>Добавить</button>
+        </div>
+    );
+};
+
+ReactDOM.render(
+    <Students />,
+    document.getElementById('root')
+);
+                    `}
+            />
         </LongDescription>
     </Section>
 );
