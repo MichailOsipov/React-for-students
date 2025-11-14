@@ -22,3 +22,6 @@ export {
 export {
     Lesson8
 } from './Lesson8';
+export {
+    Lesson9
+} from './Lesson9';

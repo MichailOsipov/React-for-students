@@ -12,7 +12,8 @@ import {
     Lesson5,
     Lesson6,
     Lesson7,
-    Lesson8
+    Lesson8,
+    Lesson9
 } from './Lessons';
 
 // import {
@@ -74,6 +75,7 @@ export const Course = () => (
             </LongDescription>
         </Section> */}
         <Lesson8 />
+        <Lesson9 />
         <Section title="Посещения занятий и баллы:">
             <a
                 target="_blank"
